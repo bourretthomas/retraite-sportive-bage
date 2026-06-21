@@ -76,7 +76,7 @@ h2 { font-size: 1.5rem; }
 .entete__haut { background: var(--vert); }
 .entete__haut-inner {
   display: flex; align-items: center; justify-content: space-between;
-  gap: 14px; padding: 12px 0;
+  gap: 14px; padding-block: 12px;
 }
 .logo { display: flex; align-items: center; gap: 13px; text-decoration: none; }
 .logo__img { height: 64px; width: auto; display: block; flex-shrink: 0; }
@@ -93,14 +93,14 @@ h2 { font-size: 1.5rem; }
 .nav__mobile { display: none; }
 
 .nav { background: var(--vert-fonce); }
-.nav__inner { display: flex; flex-wrap: wrap; gap: 4px 22px; padding: 10px 0; }
+.nav__inner { display: flex; flex-wrap: wrap; gap: 4px 22px; padding-block: 10px; }
 .nav a { color: #bfdcb2; text-decoration: none; font-size: 0.95rem; font-weight: 500; padding: 4px 2px; border-bottom: 2px solid transparent; }
 .nav a:hover { color: #fff; }
 .nav a[aria-current="page"] { color: #fff; border-bottom-color: var(--orange); }
 
 /* ---- Hero ---- */
 .hero { background: var(--vert-clair); border-bottom: 1px solid var(--vert-bordure); }
-.hero__inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 30px; align-items: center; padding: 46px 0; }
+.hero__inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 30px; align-items: center; padding-block: 46px; }
 .hero h1 { font-size: 2.3rem; margin: 10px 0 12px; }
 .hero p { font-size: 1.08rem; color: var(--texte-doux); margin: 0 0 22px; }
 .pastille {
@@ -297,7 +297,7 @@ h2 { font-size: 1.5rem; }
 
 /* ---- Pied de page ---- */
 .pied { background: var(--vert-fonce); color: #cfe6c2; margin-top: 20px; }
-.pied__inner { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 26px; padding: 36px 0; }
+.pied__inner { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 26px; padding-block: 36px; }
 .pied h3 { color: #fff; font-size: 1.05rem; margin: 0 0 10px; }
 .pied a { color: #cfe6c2; }
 .pied a:hover { color: #fff; }
@@ -319,7 +319,7 @@ h2 { font-size: 1.5rem; }
   /* Menu déroulant à grandes lignes tactiles */
   .nav { display: none; border-top: 1px solid rgba(255, 255, 255, 0.12); }
   .entete.menu-ouvert .nav { display: block; }
-  .nav__inner { flex-direction: column; gap: 0; padding: 6px 0 14px; }
+  .nav__inner { flex-direction: column; gap: 0; padding-block: 6px 14px; }
   .nav a {
     display: block; font-size: 1.12rem; padding: 15px 4px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
@@ -336,7 +336,7 @@ h2 { font-size: 1.5rem; }
   .nav a.nav__ffrs { color: #cfe6c2; border-bottom: none; }
 
   /* Héros allégé */
-  .hero__inner { grid-template-columns: 1fr; gap: 18px; padding: 26px 0; }
+  .hero__inner { grid-template-columns: 1fr; gap: 18px; padding-block: 26px; }
   .hero h1 { font-size: 1.8rem; }
   .media-vide { min-height: 150px; }
 
