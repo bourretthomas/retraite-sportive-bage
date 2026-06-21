@@ -1,0 +1,214 @@
+# Interface d'administration (Decap CMS)
+# En production : remplacer "repo" par le dépôt GitHub de l'association.
+backend:
+  name: github
+  repo: bourretthomas/retraite-sportive-bage
+  branch: main
+
+# Permet d'éditer en local pendant le développement (npm run cms)
+local_backend: true
+
+media_folder: public/images
+public_folder: /images
+
+locale: fr
+
+collections:
+  # 1. ACCUEIL ----------------------------------------------------------------
+  - name: accueil
+    label: Accueil
+    label_singular: Page d'accueil
+    files:
+      - name: accueil
+        label: Page d'accueil
+        file: src/data/accueil.json
+        fields:
+          - { name: baseline, label: 'Petit texte (bandeau vert, en haut)', widget: string }
+          - { name: accroche, label: 'Titre principal', widget: string }
+          - { name: intro, label: "Phrase d'introduction", widget: text }
+          - name: photos
+            label: Photos du bandeau d'accueil
+            label_singular: Photo
+            widget: list
+            collapsed: false
+            summary: '{{fields.legende}}'
+            fields:
+              - { name: image, label: Image, widget: image }
+              - { name: legende, label: Légende, widget: string, required: false }
+
+  # 2. ACTIVITÉS --------------------------------------------------------------
+  - name: activites
+    label: Activités
+    label_singular: Activité
+    identifier_field: titre
+    folder: src/content/activites
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { name: titre, label: Titre, widget: string }
+      - { name: icone, label: Icône, widget: iconselect, default: ti-activity }
+      - {
+          name: resume,
+          label: Résumé court,
+          widget: limittext,
+          maxlength: 160,
+          hint: 'Court résumé affiché sur la fiche.'
+        }
+      - { name: jours, label: Jours, widget: string, required: false }
+      - { name: horaires, label: Horaires, widget: string, required: false }
+      - { name: lieu, label: Lieu, widget: string, required: false }
+      - name: responsables
+        label: Responsables
+        label_singular: Responsable
+        widget: list
+        required: false
+        collapsed: false
+        summary: '{{fields.nom}}'
+        fields:
+          - { name: nom, label: Nom, widget: string }
+          - { name: tel, label: Téléphone, widget: string, required: false }
+      - name: animateurs
+        label: Animateurs
+        label_singular: Animateur
+        widget: list
+        required: false
+        collapsed: false
+        summary: '{{fields.nom}}'
+        fields:
+          - { name: nom, label: Nom, widget: string }
+          - { name: tel, label: Téléphone, widget: string, required: false }
+      - name: calendriers
+        label: Calendriers (PDF à télécharger)
+        label_singular: Calendrier
+        widget: list
+        required: false
+        collapsed: false
+        summary: '{{fields.titre}}'
+        fields:
+          - { name: titre, label: Titre, widget: string }
+          - { name: fichier, label: 'Fichier (PDF)', widget: file, required: false }
+      - name: photos
+        label: Photos (carrousel)
+        label_singular: Photo
+        widget: list
+        required: false
+        collapsed: false
+        summary: '{{fields.legende}}'
+        fields:
+          - { name: image, label: Image, widget: image }
+          - { name: legende, label: Légende, widget: string, required: false }
+      - { name: body, label: Description, widget: markdown }
+
+  # 3. FLASH INFOS ------------------------------------------------------------
+  - name: actus
+    label: Flash Infos
+    label_singular: Actualité
+    identifier_field: titre
+    folder: src/content/actus
+    create: true
+    slug: '{{slug}}'
+    summary: '{{titre}} — {{date}}'
+    fields:
+      - { name: titre, label: Titre, widget: string }
+      - {
+          name: date,
+          label: Date,
+          widget: datetime,
+          format: 'YYYY-MM-DD',
+          date_format: 'DD/MM/YYYY',
+          time_format: false,
+        }
+      - name: photos
+        label: Photos
+        label_singular: Photo
+        widget: list
+        required: false
+        collapsed: false
+        summary: '{{fields.legende}}'
+        fields:
+          - { name: image, label: Image, widget: image }
+          - { name: legende, label: Légende, widget: string, required: false }
+          - {
+              name: position,
+              label: "Cadrage de l'aperçu (cliquez sur l'image)",
+              widget: focalpoint,
+              required: false,
+              default: '50% 50%'
+            }
+          - { name: couverture, label: 'Afficher en aperçu (couverture)', widget: boolean, default: false }
+      - {
+          name: resume,
+          label: Résumé court,
+          widget: limittext,
+          multiline: true,
+          maxlength: 160,
+          required: false,
+          hint: 'Court résumé affiché sur les cartes.'
+        }
+      - { name: body, label: Texte, widget: markdown }
+
+  # 4. ADHÉSIONS --------------------------------------------------------------
+  - name: adhesions
+    label: Adhésions
+    label_singular: Page Adhésions
+    files:
+      - name: adhesions
+        label: Adhésions & documents
+        file: src/data/adhesions.json
+        fields:
+          - { name: intro, label: Présentation, widget: text }
+          - { name: cotisation, label: Cotisation, widget: string, required: false }
+          - { name: licence, label: Licence FFRS, widget: string, required: false }
+          - { name: saison, label: Saison, widget: string, required: false }
+          - name: documents
+            label: Documents à télécharger
+            label_singular: Document
+            widget: list
+            summary: '{{fields.titre}}'
+            fields:
+              - { name: titre, label: Titre, widget: string }
+              - { name: fichier, label: 'Fichier (PDF)', widget: file, required: false }
+
+  # 5. CONTACT ----------------------------------------------------------------
+  - name: contact
+    label: Contact
+    label_singular: Page Contact
+    files:
+      - name: contact
+        label: Contact, comité & liens
+        file: src/data/contact.json
+        fields:
+          - { name: intro, label: "Texte d'introduction", widget: text }
+          - { name: emailContact, label: "E-mail de contact de l'association", widget: string }
+          - { name: secteur, label: 'Secteur géographique', widget: string }
+          - { name: comiteIntro, label: 'Comité — phrase de présentation', widget: string }
+          - name: membres
+            label: Membres du comité
+            label_singular: Membre
+            widget: list
+            summary: '{{fields.nom}} — {{fields.role}}'
+            fields:
+              - { name: nom, label: Nom, widget: string }
+              - { name: role, label: Rôle, widget: string }
+              - { name: email, label: 'E-mail', widget: string, required: false }
+          - { name: federation, label: 'Texte « La fédération »', widget: text }
+          - name: liensComites
+            label: 'Liens — comités de la fédération'
+            label_singular: Lien
+            widget: list
+            required: false
+            collapsed: false
+            summary: '{{fields.nom}}'
+            fields:
+              - { name: nom, label: 'Nom affiché', widget: string }
+              - { name: url, label: 'Adresse du lien (URL)', widget: string }
+          - name: liensClubs
+            label: "Liens — autres clubs de l'Ain"
+            label_singular: Lien
+            widget: list
+            required: false
+            collapsed: false
+            summary: '{{fields.nom}}'
+            fields:
+              - { name: nom, label: 'Nom affiché', widget: string }
+              - { name: url, label: 'Adresse du lien (URL)', widget: string }

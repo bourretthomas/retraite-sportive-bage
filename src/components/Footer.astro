@@ -1,0 +1,41 @@
+---
+import { site } from '../data/site.ts';
+import contact from '../data/contact.json';
+const president = contact.membres[0] ?? { nom: '', role: '' };
+const secretaire = contact.membres[1] ?? null;
+---
+
+<footer class="pied">
+  <div class="conteneur pied__inner">
+    <div>
+      <h3>Contact</h3>
+      <p>
+        {president.nom} — {president.role}<br />
+        <a href={`mailto:${contact.emailContact}`}>{contact.emailContact}</a>
+        {secretaire && <><br />{secretaire.nom} — {secretaire.role}</>}
+      </p>
+    </div>
+    <div>
+      <h3>L’association</h3>
+      <p>
+        <a href="/activites">Nos activités</a><br />
+        <a href="/adhesions">Adhérer</a><br />
+        <a href="/contact#comite">Comité de direction</a>
+      </p>
+    </div>
+    <div>
+      <h3>Fédération</h3>
+      <p>
+        {site.affiliation}<br />
+        <a href={site.ffrs} target="_blank" rel="noopener">
+          Site de la FFRS <i class="ti ti-external-link" aria-hidden="true"></i>
+        </a>
+      </p>
+    </div>
+  </div>
+  <div class="pied__bas">
+    <div class="conteneur">
+      © {new Date().getFullYear()} {site.nom} {site.sousNom} — Affiliée à la Fédération Française de la Retraite Sportive.
+    </div>
+  </div>
+</footer>

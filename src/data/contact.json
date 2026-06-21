@@ -1,0 +1,25 @@
+{
+  "intro": "Une question sur les activités ou les adhésions ? Écrivez-nous, nous vous répondrons rapidement.",
+  "emailContact": "rsbvds@gmail.com",
+  "secteur": "Bâge / Val de Saône (Ain)",
+  "comiteIntro": "Les bénévoles qui font vivre l'association au quotidien.",
+  "membres": [
+    { "nom": "André Cany", "role": "Président", "email": "andr.cany01@orange.fr" },
+    { "nom": "Bernadette Clère", "role": "Secrétaire · gestion du site", "email": "rsbvds@gmail.com" }
+  ],
+  "federation": "Notre association est affiliée à la Fédération Française de la Retraite Sportive (FFRS · CORERS · CODERS — agréée par le Ministère des Sports).",
+  "liensComites": [
+    { "nom": "CODERS 01 — comité départemental de l'Ain", "url": "https://coders01.wixsite.com/coders01" },
+    { "nom": "CORERS Auvergne-Rhône-Alpes — comité régional", "url": "http://corers-auvergnerhonealpes.wifeo.com/" }
+  ],
+  "liensClubs": [
+    { "nom": "R. S. Attignat", "url": "https://www.rsattignat.fr/activites-gym-et-relaxation" },
+    { "nom": "R. S. Bourg-en-Bresse", "url": "http://retraitesportiveburgienne.wifeo.com/" },
+    { "nom": "R. S. Dortan", "url": "http://sbd01148.wordpress.com/" },
+    { "nom": "R. S. Nantua – Montréal-la-Cluse", "url": "http://rsnantua.nexgate.ch/" },
+    { "nom": "R. S. Viriat", "url": "http://retraitesportiveviriat.wifeo.com/" },
+    { "nom": "R. S. Bény", "url": "http://clubs.ffrs-retraite-sportive.org/annuaire/retraite-sportive-de-beny/" },
+    { "nom": "R. S. Oyonnax", "url": "https://clubs.ffrs-retraite-sportive.org/annuaire/club-des-activites-sportives-des-retraites-d-oyonnax/" },
+    { "nom": "R. S. Saint-Étienne-du-Bois", "url": "http://clubs.ffrs-retraite-sportive.org/annuaire/st-etienne-du-bois/" }
+  ]
+}

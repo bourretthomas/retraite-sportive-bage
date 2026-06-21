@@ -1,0 +1,108 @@
+---
+import Base from '../../layouts/Base.astro';
+import Carrousel from '../../components/Carrousel.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const activites = await getCollection('activites');
+  return activites.map((item) => ({ params: { slug: item.id }, props: { item } }));
+}
+
+const { item } = Astro.props;
+const { Content } = await render(item);
+const d = item.data;
+const photos = d.photos ?? [];
+const responsables = d.responsables ?? [];
+const animateurs = d.animateurs ?? [];
+const calendriers = d.calendriers ?? [];
+
+const numeros = (t) => (t ? t.split('/').map((s) => s.trim()).filter(Boolean) : []);
+const telHref = (n) => 'tel:' + n.replace(/[^0-9+]/g, '');
+---
+
+<Base titre={d.titre} description={d.resume}>
+  <section class="section">
+    <div class="conteneur">
+      <p class="fil"><a href="/activites">Activités</a> › {d.titre}</p>
+
+      <div class="fiche__entete">
+        <i class={`ti ${d.icone}`} aria-hidden="true"></i>
+        <h1 style="margin:0">{d.titre}</h1>
+      </div>
+      <p style="color:var(--texte-doux);max-width:680px">{d.resume}</p>
+
+      <Carrousel photos={photos} variant="detail" />
+
+      {(d.jours || d.horaires || d.lieu) && (
+        <div class="infos">
+          {d.jours && <div class="info"><div class="info__label"><i class="ti ti-calendar" aria-hidden="true"></i> Jours</div><div class="info__valeur">{d.jours}</div></div>}
+          {d.horaires && <div class="info"><div class="info__label"><i class="ti ti-clock" aria-hidden="true"></i> Horaires</div><div class="info__valeur">{d.horaires}</div></div>}
+          {d.lieu && <div class="info"><div class="info__label"><i class="ti ti-map-pin" aria-hidden="true"></i> Lieu</div><div class="info__valeur">{d.lieu}</div></div>}
+        </div>
+      )}
+
+      <div class="contenu"><Content /></div>
+
+      {(responsables.length > 0 || animateurs.length > 0) && (
+        <div class="encadrement">
+          <h2>Encadrement</h2>
+
+          {responsables.length > 0 && (
+            <>
+              <h3 class="encadrement__titre">{responsables.length > 1 ? 'Responsables' : 'Responsable'}</h3>
+              <div class="encadrants">
+                {responsables.map((p) => (
+                  <div class="encadrant encadrant--resp">
+                    <div class="encadrant__nom"><i class="ti ti-user-star" aria-hidden="true"></i> {p.nom}</div>
+                    {p.tel && (
+                      <div class="encadrant__tel">
+                        {numeros(p.tel).map((n) => (
+                          <a href={telHref(n)}><i class="ti ti-phone" aria-hidden="true"></i> {n}</a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+
+          {animateurs.length > 0 && (
+            <>
+              <h3 class="encadrement__titre">{animateurs.length > 1 ? 'Animateurs' : 'Animateur'}</h3>
+              <div class="encadrants">
+                {animateurs.map((p) => (
+                  <div class="encadrant">
+                    <div class="encadrant__nom"><i class="ti ti-user" aria-hidden="true"></i> {p.nom}</div>
+                    {p.tel && (
+                      <div class="encadrant__tel">
+                        {numeros(p.tel).map((n) => (
+                          <a href={telHref(n)}><i class="ti ti-phone" aria-hidden="true"></i> {n}</a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+      )}
+
+      {calendriers.length > 0 && (
+        <div class="calendriers">
+          <h2>Calendriers</h2>
+          <div class="calendriers__liste">
+            {calendriers.map((c) => (
+              c.fichier
+                ? <a href={c.fichier} class="btn btn--ligne" target="_blank" rel="noopener"><i class="ti ti-calendar-event" aria-hidden="true"></i> {c.titre}</a>
+                : <span class="btn btn--ligne calendrier--vide"><i class="ti ti-calendar-event" aria-hidden="true"></i> {c.titre} (à venir)</span>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <p style="margin-top:32px"><a href="/adhesions" class="btn btn--orange">Participer à cette activité</a></p>
+    </div>
+  </section>
+</Base>

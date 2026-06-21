@@ -1,0 +1,30 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const activites = (await getCollection('activites')).sort((a, b) => a.data.titre.localeCompare(b.data.titre, 'fr'));
+---
+
+<Base titre="Nos activités" description="Les onze activités de la Retraite Sportive Bâge Val de Saône.">
+  <section class="section">
+    <div class="conteneur">
+      <h1>Nos activités</h1>
+      <p style="color:var(--texte-doux);max-width:680px">
+        Onze disciplines encadrées par des animateurs formés. Cliquez sur une activité pour le détail (jours, horaires, lieu).
+      </p>
+      <div class="grille-actus" style="margin-top:24px">
+        {activites.map((a) => (
+          <a class="carte" href={`/activites/${a.id}`}>
+            <div class="carte__img">
+              <i class={`ti ${a.data.icone}`} style="font-size:34px" aria-hidden="true"></i>
+            </div>
+            <div class="carte__corps">
+              <div class="carte__titre">{a.data.titre}</div>
+              <p style="margin:6px 0 0;font-size:0.92rem;color:var(--texte-doux)">{a.data.resume}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

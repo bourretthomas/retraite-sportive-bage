@@ -1,0 +1,137 @@
+---
+// Carrousel photos réutilisable.
+// Props : photos = [{ image, legende?, position? }], autoplay (bool), variant ('hero' | 'detail')
+import { posCss } from '../utils/photos.ts';
+const { photos = [], autoplay = false, variant } = Astro.props;
+---
+
+{photos.length > 0 && (
+  <div
+    class:list={['carrousel', variant && `carrousel--${variant}`]}
+    data-carrousel
+    data-autoplay={autoplay ? 'true' : undefined}
+  >
+    <div class="carrousel__cadre">
+      <div class="carrousel__piste">
+        {photos.map((p) => (
+          <figure class="carrousel__slide">
+            <img src={p.image} alt={p.legende ?? ''} loading="lazy" style={`object-position:${posCss(p.position)}`} />
+            {p.legende && <figcaption class="carrousel__legende">{p.legende}</figcaption>}
+          </figure>
+        ))}
+      </div>
+      {photos.length > 1 && (
+        <button class="carrousel__btn carrousel__btn--prev" data-prev type="button" aria-label="Photo précédente">
+          <i class="ti ti-chevron-left" aria-hidden="true"></i>
+        </button>
+      )}
+      {photos.length > 1 && (
+        <button class="carrousel__btn carrousel__btn--next" data-next type="button" aria-label="Photo suivante">
+          <i class="ti ti-chevron-right" aria-hidden="true"></i>
+        </button>
+      )}
+      <button class="carrousel__zoom" data-zoom type="button" aria-label="Agrandir la photo">
+        <i class="ti ti-arrows-maximize" aria-hidden="true"></i>
+      </button>
+    </div>
+    {photos.length > 1 && (
+      <div class="carrousel__points">
+        {photos.map((_, i) => (
+          <button class="carrousel__point" data-index={i} type="button" aria-label={`Photo ${i + 1}`}></button>
+        ))}
+      </div>
+    )}
+  </div>
+)}
+
+<script>
+  const reduit = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // --- Lightbox partagée (affiche la photo en grand, non recadrée) ---
+  let lb, lbImg, lbCap, lbSlides = [], lbIndex = 0;
+  function construireLightbox() {
+    lb = document.createElement('div');
+    lb.className = 'lightbox';
+    lb.hidden = true;
+    lb.innerHTML =
+      '<button class="lightbox__close" type="button" aria-label="Fermer"><i class="ti ti-x"></i></button>' +
+      '<button class="lightbox__nav lightbox__prev" type="button" aria-label="Photo précédente"><i class="ti ti-chevron-left"></i></button>' +
+      '<img class="lightbox__img" alt="" />' +
+      '<button class="lightbox__nav lightbox__next" type="button" aria-label="Photo suivante"><i class="ti ti-chevron-right"></i></button>' +
+      '<figcaption class="lightbox__legende"></figcaption>';
+    document.body.appendChild(lb);
+    lbImg = lb.querySelector('.lightbox__img');
+    lbCap = lb.querySelector('.lightbox__legende');
+    lb.querySelector('.lightbox__close').addEventListener('click', fermerLightbox);
+    lb.querySelector('.lightbox__prev').addEventListener('click', (e) => { e.stopPropagation(); montrer(lbIndex - 1); });
+    lb.querySelector('.lightbox__next').addEventListener('click', (e) => { e.stopPropagation(); montrer(lbIndex + 1); });
+    lb.addEventListener('click', (e) => { if (e.target === lb) fermerLightbox(); });
+    document.addEventListener('keydown', (e) => {
+      if (!lb || lb.hidden) return;
+      if (e.key === 'Escape') fermerLightbox();
+      else if (e.key === 'ArrowLeft') montrer(lbIndex - 1);
+      else if (e.key === 'ArrowRight') montrer(lbIndex + 1);
+    });
+  }
+  function montrer(i) {
+    const n = lbSlides.length;
+    if (!n) return;
+    lbIndex = (i + n) % n;
+    const s = lbSlides[lbIndex];
+    lbImg.src = s.src;
+    lbImg.alt = s.legende || '';
+    lbCap.textContent = s.legende || '';
+    lbCap.style.display = s.legende ? '' : 'none';
+    lb.querySelectorAll('.lightbox__nav').forEach((b) => (b.style.display = n > 1 ? '' : 'none'));
+  }
+  function ouvrirLightbox(slides, i) {
+    if (!lb) construireLightbox();
+    lbSlides = slides;
+    montrer(i);
+    lb.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+  function fermerLightbox() {
+    if (lb) lb.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  // --- Carrousels ---
+  document.querySelectorAll('[data-carrousel]').forEach((car) => {
+    if (car.dataset.carrouselInit) return;
+    car.dataset.carrouselInit = '1';
+
+    const piste = car.querySelector('.carrousel__piste');
+    const points = Array.from(car.querySelectorAll('.carrousel__point'));
+    const nb = car.querySelectorAll('.carrousel__slide').length;
+    const largeur = () => piste.clientWidth;
+    const indexActuel = () => Math.round(piste.scrollLeft / largeur());
+    const allerA = (i) => piste.scrollTo({ left: largeur() * ((i + nb) % nb), behavior: 'smooth' });
+
+    car.querySelector('[data-prev]')?.addEventListener('click', () => allerA(indexActuel() - 1));
+    car.querySelector('[data-next]')?.addEventListener('click', () => allerA(indexActuel() + 1));
+    points.forEach((pt, i) => pt.addEventListener('click', () => allerA(i)));
+
+    const sync = () => {
+      const idx = indexActuel();
+      points.forEach((pt, i) => pt.classList.toggle('actif', i === idx));
+    };
+    piste.addEventListener('scroll', sync);
+    sync();
+
+    // Agrandissement (lightbox)
+    const slides = Array.from(car.querySelectorAll('.carrousel__slide')).map((sl) => {
+      const im = sl.querySelector('img');
+      const cap = sl.querySelector('.carrousel__legende');
+      return { src: im ? im.src : '', legende: cap ? cap.textContent : '' };
+    });
+    car.querySelector('[data-zoom]')?.addEventListener('click', () => ouvrirLightbox(slides, indexActuel()));
+
+    if (car.dataset.autoplay === 'true' && nb > 1 && !reduit) {
+      const demarrer = () => setInterval(() => allerA(indexActuel() + 1), 5000);
+      let timer = demarrer();
+      car.addEventListener('mouseenter', () => clearInterval(timer));
+      car.addEventListener('mouseleave', () => { timer = demarrer(); });
+    }
+  });
+</script>

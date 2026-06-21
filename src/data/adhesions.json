@@ -1,0 +1,12 @@
+{
+  "intro": "L'adhésion est ouverte à toute personne de plus de 50 ans souhaitant pratiquer une ou plusieurs activités dans un cadre convivial. Elle comprend la licence FFRS (assurance incluse).",
+  "cotisation": "À compléter",
+  "licence": "Assurance incluse",
+  "saison": "Septembre → juin",
+  "documents": [
+    { "titre": "Fiche d'inscription 2025-2026", "fichier": "/images/fiche-inscription-2025.pdf" },
+    { "titre": "Recommandations santé", "fichier": "/images/recommandations-sante.pdf" },
+    { "titre": "Droit à l'image", "fichier": "/images/droit-a-l-image.pdf" },
+    { "titre": "Règlement intérieur", "fichier": "/images/reglement-interieur-mis-a-jour-2023-2.pdf" }
+  ]
+}

@@ -1,0 +1,56 @@
+---
+import { site } from '../data/site.ts';
+const path = Astro.url.pathname;
+const actif = (href) => (href === '/' ? path === '/' : path.startsWith(href));
+---
+
+<header class="entete">
+  <div class="entete__haut">
+    <div class="conteneur entete__haut-inner">
+      <a href="/" class="logo" aria-label={`${site.nom} ${site.sousNom} — accueil`}>
+        <img src="/images/logo.png" alt={`${site.nom} ${site.sousNom} — Sport Senior Santé`} class="logo__img" width="483" height="947" />
+        <span class="logo__txt">
+          <b>{site.nom}</b>
+          <span>{site.sousNom}</span>
+        </span>
+      </a>
+      <div class="entete__actions">
+        <a href="/adhesions" class="btn btn--orange entete__cta">Nous rejoindre</a>
+        <a href={site.ffrs} target="_blank" rel="noopener" class="btn btn--ligne entete__ffrs">
+          <i class="ti ti-external-link" aria-hidden="true"></i> FFRS
+        </a>
+        <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+          <i class="ti ti-menu-2" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <nav class="nav" id="menu" aria-label="Navigation principale">
+    <div class="conteneur nav__inner">
+      {site.nav.map((item) => (
+        <a href={item.href} aria-current={actif(item.href) ? 'page' : undefined}>{item.label}</a>
+      ))}
+      <a href="/adhesions" class="nav__cta nav__mobile">Nous rejoindre</a>
+      <a href={site.ffrs} target="_blank" rel="noopener" class="nav__mobile nav__ffrs">
+        Site de la FFRS <i class="ti ti-external-link" aria-hidden="true"></i>
+      </a>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const entete = document.querySelector('.entete');
+  const burger = document.getElementById('burger');
+  burger?.addEventListener('click', () => {
+    const ouvert = entete.classList.toggle('menu-ouvert');
+    burger.setAttribute('aria-expanded', ouvert ? 'true' : 'false');
+    burger.setAttribute('aria-label', ouvert ? 'Fermer le menu' : 'Ouvrir le menu');
+  });
+  document.querySelectorAll('#menu a').forEach((a) =>
+    a.addEventListener('click', () => {
+      entete.classList.remove('menu-ouvert');
+      burger?.setAttribute('aria-expanded', 'false');
+    })
+  );
+</script>

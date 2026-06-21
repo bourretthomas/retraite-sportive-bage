@@ -1,0 +1,72 @@
+---
+import Base from '../layouts/Base.astro';
+import Carrousel from '../components/Carrousel.astro';
+import { getCollection } from 'astro:content';
+import { site } from '../data/site.ts';
+import accueil from '../data/accueil.json';
+import { couverture, posCss } from '../utils/photos.ts';
+
+const activites = (await getCollection('activites')).sort((a, b) => a.data.titre.localeCompare(b.data.titre, 'fr'));
+const actus = (await getCollection('actus'))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+const dateFr = (d) => new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }).format(d);
+---
+
+<Base>
+  <section class="hero">
+    <div class="conteneur hero__inner">
+      <div>
+        <span class="pastille">{accueil.baseline}</span>
+        <h1>{accueil.accroche}</h1>
+        <p>{accueil.intro}</p>
+        <a href="/activites" class="btn btn--vert">Découvrir les activités</a>
+      </div>
+      {accueil.photos.length > 0 ? (
+        <Carrousel photos={accueil.photos} autoplay variant="hero" />
+      ) : (
+        <div class="media-vide">
+          <i class="ti ti-photo" style="font-size:34px" aria-hidden="true"></i>
+          <span>Photo du groupe</span>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="conteneur">
+      <div class="titre-section"><h2>Nos activités</h2><a href="/activites" class="btn btn--ligne">Tout voir</a></div>
+      <div class="grille-activites">
+        {activites.map((a) => (
+          <a class="tuile" href={`/activites/${a.id}`}>
+            <i class={`ti ${a.data.icone}`} aria-hidden="true"></i>
+            <span>{a.data.titre}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--doux">
+    <div class="conteneur">
+      <div class="titre-section"><h2>Flash Infos</h2><a href="/actus" class="btn btn--ligne">Toutes les actus</a></div>
+      <div class="grille-actus">
+        {actus.map((n) => {
+          const cover = couverture(n.data.photos);
+          return (
+            <a class="carte" href={`/actus/${n.id}`}>
+              <div class="carte__img">
+                {cover ? <img src={cover.image} alt={n.data.titre} style={`object-position:${posCss(cover.position)}`} /> : <i class="ti ti-photo" style="font-size:26px" aria-hidden="true"></i>}
+              </div>
+              <div class="carte__corps">
+                <div class="carte__date">{dateFr(n.data.date)}</div>
+                <div class="carte__titre">{n.data.titre}</div>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+</Base>

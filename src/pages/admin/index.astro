@@ -1,0 +1,505 @@
+---
+// Page d'administration (Decap CMS) + widget personnalisé « sélecteur d'icônes ».
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administration — Retraite Sportive Bâge</title>
+    <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3/dist/tabler-icons.min.css"
+    />
+    <style is:inline>
+      .iconselect-filtre { width:100%; padding:9px 11px; margin-bottom:10px; border:1px solid #ccc; border-radius:6px; box-sizing:border-box; font-size:14px; }
+      .iconselect-grille { display:grid; grid-template-columns:repeat(auto-fill,minmax(94px,1fr)); gap:8px; max-height:340px; overflow-y:auto; padding:6px; border:1px solid #e6e6e6; border-radius:8px; background:#fafafa; }
+      .iconselect-tuile { display:flex; flex-direction:column; align-items:center; gap:6px; padding:10px 6px; background:#fff; border:1px solid #e0e0e0; border-radius:8px; cursor:pointer; font-size:11px; color:#333; text-align:center; line-height:1.2; }
+      .iconselect-tuile:hover { border-color:#3c7d2e; background:#f3f8ee; }
+      .iconselect-tuile.is-actif { border-color:#3c7d2e; background:#e7f0dd; box-shadow:0 0 0 2px rgba(60,125,46,.35); }
+      .iconselect-tuile i { font-size:26px; color:#3c7d2e; }
+      .iconselect-tuile span { word-break:break-word; }
+      .iconselect-vide { color:#888; font-size:13px; padding:10px; }
+    </style>
+  </head>
+  <body>
+    <script src="https://unpkg.com/decap-cms@^3.3.0/dist/decap-cms.js" is:inline></script>
+    <script is:inline>
+      (function () {
+        var ICONS = [
+          { v: 'ti-swimming', l: 'Natation / Aquagym' },
+          { v: 'ti-droplet', l: "Eau / Vel'eau" },
+          { v: 'ti-pool', l: 'Piscine' },
+          { v: 'ti-scuba-diving', l: 'Plongée' },
+          { v: 'ti-kayak', l: 'Canoë / Kayak' },
+          { v: 'ti-sailboat', l: 'Voile' },
+          { v: 'ti-fish', l: 'Pêche' },
+          { v: 'ti-walk', l: 'Marche' },
+          { v: 'ti-run', l: 'Course / Marche nordique' },
+          { v: 'ti-bike', l: 'Vélo / Cyclotourisme' },
+          { v: 'ti-mountain', l: 'Randonnée / Montagne' },
+          { v: 'ti-shoe', l: 'Chaussure / Marche' },
+          { v: 'ti-tent', l: 'Camping' },
+          { v: 'ti-campfire', l: 'Feu de camp' },
+          { v: 'ti-compass', l: 'Orientation' },
+          { v: 'ti-map-2', l: 'Sortie / Carte' },
+          { v: 'ti-route', l: 'Parcours' },
+          { v: 'ti-horse-toy', l: 'Équitation' },
+          { v: 'ti-stretching', l: 'Gymnastique' },
+          { v: 'ti-yoga', l: 'Yoga / Relaxation' },
+          { v: 'ti-barbell', l: 'Musculation' },
+          { v: 'ti-treadmill', l: 'Fitness / Cardio' },
+          { v: 'ti-jump-rope', l: 'Corde à sauter' },
+          { v: 'ti-karate', l: 'Arts martiaux' },
+          { v: 'ti-massage', l: 'Détente / Massage' },
+          { v: 'ti-bowling', l: 'Bowling' },
+          { v: 'ti-target', l: 'Pétanque / Cible' },
+          { v: 'ti-ball-tennis', l: 'Tennis / Pickleball' },
+          { v: 'ti-ping-pong', l: 'Tennis de table' },
+          { v: 'ti-ball-football', l: 'Football' },
+          { v: 'ti-ball-basketball', l: 'Basket-ball' },
+          { v: 'ti-ball-volleyball', l: 'Volley-ball' },
+          { v: 'ti-golf', l: 'Golf' },
+          { v: 'ti-soccer-field', l: 'Terrain de sport' },
+          { v: 'ti-tournament', l: 'Tournoi / Compétition' },
+          { v: 'ti-trophy', l: 'Trophée' },
+          { v: 'ti-medal', l: 'Médaille' },
+          { v: 'ti-ice-skating', l: 'Patinage' },
+          { v: 'ti-skateboard', l: 'Skate' },
+          { v: 'ti-roller-skating', l: 'Roller' },
+          { v: 'ti-music', l: 'Danse / Musique' },
+          { v: 'ti-piano', l: 'Piano' },
+          { v: 'ti-guitar-pick', l: 'Guitare' },
+          { v: 'ti-microphone-2', l: 'Chant / Chorale' },
+          { v: 'ti-headphones', l: 'Écoute musicale' },
+          { v: 'ti-camera', l: 'Photo' },
+          { v: 'ti-palette', l: 'Peinture / Arts' },
+          { v: 'ti-brush', l: 'Dessin' },
+          { v: 'ti-needle-thread', l: 'Couture / Tricot' },
+          { v: 'ti-cards', l: 'Cartes / Belote' },
+          { v: 'ti-chess', l: 'Échecs' },
+          { v: 'ti-dice', l: 'Jeux de société' },
+          { v: 'ti-puzzle', l: 'Puzzle' },
+          { v: 'ti-brain', l: "Mémoire / Activ'Mémoire" },
+          { v: 'ti-book', l: 'Lecture' },
+          { v: 'ti-pencil', l: 'Écriture' },
+          { v: 'ti-device-laptop', l: 'Informatique' },
+          { v: 'ti-tree', l: 'Nature' },
+          { v: 'ti-leaf', l: 'Feuille / Nature' },
+          { v: 'ti-flower', l: 'Fleur / Jardin' },
+          { v: 'ti-plant', l: 'Jardinage' },
+          { v: 'ti-sun', l: 'Plein air' },
+          { v: 'ti-coffee', l: 'Café / Rencontre' },
+          { v: 'ti-glass-full', l: 'Apéritif / Convivialité' },
+          { v: 'ti-chef-hat', l: 'Cuisine' },
+          { v: 'ti-salad', l: 'Repas / Cuisine' },
+          { v: 'ti-grill', l: 'Barbecue' },
+          { v: 'ti-friends', l: 'Amis / Convivialité' },
+          { v: 'ti-users', l: 'Groupe' },
+          { v: 'ti-mood-smile', l: 'Bonne humeur' },
+          { v: 'ti-heart', l: 'Bien-être / Santé' },
+          { v: 'ti-heart-handshake', l: 'Solidarité' },
+          { v: 'ti-balloon', l: 'Fête / Événement' },
+          { v: 'ti-plane', l: 'Voyage / Sortie' },
+          { v: 'ti-activity', l: 'Autre (générique)' }
+        ];
+
+        var IconControl = createClass({
+          getInitialState: function () {
+            return { filtre: '' };
+          },
+          handleFiltre: function (e) {
+            this.setState({ filtre: e.target.value });
+          },
+          render: function () {
+            var self = this;
+            var val = this.props.value || '';
+            var f = this.state.filtre.toLowerCase().trim();
+            var liste = ICONS.filter(function (ic) {
+              return !f || ic.l.toLowerCase().indexOf(f) !== -1 || ic.v.indexOf(f) !== -1;
+            });
+            var tuiles = liste.map(function (ic) {
+              return h(
+                'button',
+                {
+                  type: 'button',
+                  key: ic.v,
+                  title: ic.l,
+                  className: 'iconselect-tuile' + (val === ic.v ? ' is-actif' : ''),
+                  onClick: function () {
+                    self.props.onChange(ic.v);
+                  }
+                },
+                h('i', { className: 'ti ' + ic.v }),
+                h('span', {}, ic.l)
+              );
+            });
+            return h(
+              'div',
+              { className: this.props.classNameWrapper, id: this.props.forID },
+              h('input', {
+                type: 'text',
+                className: 'iconselect-filtre',
+                placeholder: 'Rechercher une icône…',
+                value: this.state.filtre,
+                onChange: this.handleFiltre
+              }),
+              tuiles.length
+                ? h('div', { className: 'iconselect-grille' }, tuiles)
+                : h('div', { className: 'iconselect-vide' }, 'Aucune icône trouvée.')
+            );
+          }
+        });
+
+        var IconPreview = createClass({
+          render: function () {
+            var v = this.props.value;
+            return v ? h('i', { className: 'ti ' + v, style: { fontSize: '30px' } }) : null;
+          }
+        });
+
+        CMS.registerWidget('iconselect', IconControl, IconPreview);
+
+        // --- Champ texte avec compteur de caractères + limite stricte ---
+        var LimitTextControl = createClass({
+          getMax: function () {
+            var f = this.props.field;
+            var n = parseInt(f && f.get ? f.get('maxlength') : null, 10);
+            return n > 0 ? n : 160;
+          },
+          handleChange: function (e) {
+            var max = this.getMax();
+            var v = e.target.value || '';
+            if (v.length > max) v = v.slice(0, max);
+            this.props.onChange(v);
+          },
+          render: function () {
+            var props = this.props;
+            var value = props.value || '';
+            var max = this.getMax();
+            var multiline = props.field && props.field.get ? props.field.get('multiline') : false;
+            var count = value.length;
+            var reste = max - count;
+            var couleur = count >= max ? '#c0392b' : reste <= 20 ? '#e8941f' : '#777';
+            var champ = h(multiline ? 'textarea' : 'input', {
+              id: props.forID,
+              className: props.classNameWrapper,
+              value: value,
+              onChange: this.handleChange,
+              maxLength: max,
+              rows: multiline ? 3 : undefined,
+              type: multiline ? undefined : 'text'
+            });
+            var compteur = h(
+              'div',
+              { style: { textAlign: 'right', fontSize: '12px', marginTop: '4px', color: couleur, fontVariantNumeric: 'tabular-nums' } },
+              count + '/' + max
+            );
+            return h('div', {}, champ, compteur);
+          }
+        });
+        var LimitTextPreview = createClass({
+          render: function () {
+            return h('div', {}, this.props.value || '');
+          }
+        });
+        CMS.registerWidget('limittext', LimitTextControl, LimitTextPreview);
+
+        // --- Aperçus (preview pane) personnalisés ---
+        // Limite globale : empêche les images d'apparaître en taille brute.
+        CMS.registerPreviewStyle(
+          'img{max-width:360px;height:auto}' +
+            'body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#222;padding:16px;line-height:1.6}' +
+            'h1{color:#234a19;font-size:22px}',
+          { raw: true }
+        );
+
+        var POS = {
+          centre: 'center',
+          haut: 'center top',
+          bas: 'center bottom',
+          gauche: 'left center',
+          droite: 'right center'
+        };
+
+        // Convertit la valeur de cadrage (mot-clé ou "x% y%") en object-position CSS.
+        function posValue(v) {
+          if (!v) return 'center';
+          if (POS[v]) return POS[v];
+          if (v.indexOf('%') !== -1) return v;
+          return 'center';
+        }
+
+        // Un cadre photo recadré 16:9, largeur fixe, avec le cadrage choisi.
+        function cadrePhoto(getAsset, p, key) {
+          var img = p.get('image');
+          var src = img ? String(getAsset(img)) : '';
+          var pos = posValue(p.get('position'));
+          var legende = p.get('legende');
+          var couverture = p.get('couverture');
+          return h(
+            'figure',
+            { key: key, style: { margin: '0 0 14px' } },
+            h(
+              'div',
+              {
+                style: {
+                  position: 'relative',
+                  width: '360px',
+                  maxWidth: '100%',
+                  aspectRatio: '16 / 9',
+                  overflow: 'hidden',
+                  borderRadius: '10px',
+                  background: '#e7eede',
+                  border: '1px solid #dcebcf'
+                }
+              },
+              src
+                ? h('img', {
+                    src: src,
+                    style: {
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: pos,
+                      display: 'block'
+                    }
+                  })
+                : null,
+              couverture
+                ? h(
+                    'span',
+                    {
+                      style: {
+                        position: 'absolute',
+                        top: '8px',
+                        left: '8px',
+                        background: '#3c7d2e',
+                        color: '#fff',
+                        fontSize: '11px',
+                        padding: '3px 9px',
+                        borderRadius: '20px'
+                      }
+                    },
+                    'Aperçu (couverture)'
+                  )
+                : null
+            ),
+            legende
+              ? h('figcaption', { style: { fontSize: '13px', color: '#555', marginTop: '5px' } }, legende)
+              : null
+          );
+        }
+
+        function cadresDePhotos(photos, getAsset) {
+          var out = [];
+          if (photos && photos.size) {
+            photos.forEach(function (p, i) {
+              out.push(cadrePhoto(getAsset, p, i));
+            });
+          }
+          return out;
+        }
+
+        var ActuPreview = createClass({
+          render: function () {
+            var d = this.props.entry.get('data');
+            return h(
+              'div',
+              {},
+              h('h1', { style: { margin: '0 0 4px' } }, d.get('titre') || ''),
+              h('p', { style: { color: '#888', fontSize: '13px', margin: '0 0 14px' } }, String(d.get('date') || '')),
+              cadresDePhotos(d.get('photos'), this.props.getAsset),
+              d.get('resume') ? h('p', { style: { color: '#555' } }, d.get('resume')) : null
+            );
+          }
+        });
+
+        var ActivitePreview = createClass({
+          render: function () {
+            var d = this.props.entry.get('data');
+            return h(
+              'div',
+              {},
+              h(
+                'h1',
+                { style: { margin: '0 0 6px' } },
+                h('i', {
+                  className: 'ti ' + (d.get('icone') || 'ti-activity'),
+                  style: { marginRight: '8px', color: '#3c7d2e' }
+                }),
+                d.get('titre') || ''
+              ),
+              d.get('resume') ? h('p', { style: { color: '#555' } }, d.get('resume')) : null,
+              cadresDePhotos(d.get('photos'), this.props.getAsset)
+            );
+          }
+        });
+
+        CMS.registerPreviewTemplate('actus', ActuPreview);
+        CMS.registerPreviewTemplate('activites', ActivitePreview);
+
+        // --- Widget « point focal » : repositionner l'image dans le cadre ---
+        function focalCoords(v) {
+          var kw = { centre: [50, 50], haut: [50, 0], bas: [50, 100], gauche: [0, 50], droite: [100, 50] };
+          if (v && kw[v]) return kw[v];
+          if (v && v.indexOf('%') !== -1) {
+            var m = v.match(/(-?\d+(?:\.\d+)?)%\s+(-?\d+(?:\.\d+)?)%/);
+            if (m) return [parseFloat(m[1]), parseFloat(m[2])];
+          }
+          return [50, 50];
+        }
+
+        var FocalControl = createClass({
+          getInitialState: function () {
+            return { drag: false, src: '' };
+          },
+          componentDidMount: function () {
+            var self = this;
+            this.maj();
+            this.timer = setInterval(function () {
+              self.maj();
+            }, 600);
+          },
+          componentWillUnmount: function () {
+            if (this.timer) clearInterval(this.timer);
+          },
+          // Récupère l'image sœur (même élément de liste) via le DOM.
+          maj: function () {
+            var root = this.root;
+            if (!root) return;
+            var el = root.parentNode;
+            var trouve = '';
+            while (el && el !== document.body && !trouve) {
+              var imgs = el.querySelectorAll ? el.querySelectorAll('img') : [];
+              for (var i = 0; i < imgs.length; i++) {
+                if (this.frame && this.frame.contains(imgs[i])) continue;
+                if (imgs[i].getAttribute('src')) {
+                  trouve = imgs[i].src;
+                  break;
+                }
+              }
+              el = el.parentNode;
+            }
+            if (trouve !== this.state.src) this.setState({ src: trouve });
+          },
+          appliquer: function (e) {
+            var box = this.frame;
+            if (!box) return;
+            var r = box.getBoundingClientRect();
+            var cx = e.touches && e.touches[0] ? e.touches[0].clientX : e.clientX;
+            var cy = e.touches && e.touches[0] ? e.touches[0].clientY : e.clientY;
+            var x = Math.round(Math.min(100, Math.max(0, ((cx - r.left) / r.width) * 100)));
+            var y = Math.round(Math.min(100, Math.max(0, ((cy - r.top) / r.height) * 100)));
+            this.props.onChange(x + '% ' + y + '%');
+          },
+          render: function () {
+            var self = this;
+            var src = this.state.src;
+            var c = focalCoords(this.props.value);
+            var objpos = c[0] + '% ' + c[1] + '%';
+            if (!src) {
+              return h(
+                'div',
+                {
+                  className: this.props.classNameWrapper,
+                  ref: function (el) {
+                    self.root = el;
+                  }
+                },
+                h(
+                  'p',
+                  { style: { fontSize: '13px', color: '#888', padding: '8px 0' } },
+                  'Ajoutez une image ci-dessus, puis revenez ici pour la repositionner.'
+                )
+              );
+            }
+            return h(
+              'div',
+              {
+                className: this.props.classNameWrapper,
+                ref: function (el) {
+                  self.root = el;
+                }
+              },
+              h(
+                'div',
+                {
+                  ref: function (el) {
+                    self.frame = el;
+                  },
+                  onMouseDown: function (e) {
+                    self.setState({ drag: true });
+                    self.appliquer(e);
+                  },
+                  onMouseMove: function (e) {
+                    if (self.state.drag) self.appliquer(e);
+                  },
+                  onMouseUp: function () {
+                    self.setState({ drag: false });
+                  },
+                  onMouseLeave: function () {
+                    self.setState({ drag: false });
+                  },
+                  onTouchStart: function (e) {
+                    self.appliquer(e);
+                  },
+                  onTouchMove: function (e) {
+                    self.appliquer(e);
+                  },
+                  style: {
+                    position: 'relative',
+                    width: '320px',
+                    maxWidth: '100%',
+                    aspectRatio: '16 / 9',
+                    overflow: 'hidden',
+                    borderRadius: '10px',
+                    cursor: 'crosshair',
+                    border: '1px solid #dcebcf',
+                    userSelect: 'none',
+                    touchAction: 'none'
+                  }
+                },
+                h('img', {
+                  src: src,
+                  draggable: false,
+                  style: {
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: objpos,
+                    display: 'block',
+                    pointerEvents: 'none'
+                  }
+                }),
+                h('div', {
+                  style: {
+                    position: 'absolute',
+                    left: c[0] + '%',
+                    top: c[1] + '%',
+                    width: '24px',
+                    height: '24px',
+                    marginLeft: '-12px',
+                    marginTop: '-12px',
+                    borderRadius: '50%',
+                    border: '3px solid #fff',
+                    boxShadow: '0 0 0 2px #3c7d2e, 0 1px 5px rgba(0,0,0,.45)',
+                    pointerEvents: 'none'
+                  }
+                })
+              ),
+              h(
+                'p',
+                { style: { fontSize: '12px', color: '#666', margin: '6px 0 0' } },
+                'Cliquez (ou glissez) sur l’image pour choisir la partie à garder visible dans l’aperçu recadré.'
+              )
+            );
+          }
+        });
+        CMS.registerWidget('focalpoint', FocalControl);
+      })();
+    </script>
+  </body>
+</html>

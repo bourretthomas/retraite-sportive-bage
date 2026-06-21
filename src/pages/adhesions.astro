@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+import adhesions from '../data/adhesions.json';
+import contact from '../data/contact.json';
+---
+
+<Base titre="Adhésions" description="Comment adhérer à la Retraite Sportive Bâge Val de Saône.">
+  <section class="section">
+    <div class="conteneur contenu">
+      <h1>Adhérer à l’association</h1>
+      <p>{adhesions.intro}</p>
+
+      <div class="infos">
+        <div class="info"><div class="info__label"><i class="ti ti-cash" aria-hidden="true"></i> Cotisation</div><div class="info__valeur">{adhesions.cotisation || 'À compléter'}</div></div>
+        <div class="info"><div class="info__label"><i class="ti ti-shield-check" aria-hidden="true"></i> Licence FFRS</div><div class="info__valeur">{adhesions.licence || 'Assurance incluse'}</div></div>
+        <div class="info"><div class="info__label"><i class="ti ti-calendar" aria-hidden="true"></i> Saison</div><div class="info__valeur">{adhesions.saison || 'Septembre → juin'}</div></div>
+      </div>
+
+      <h2>Documents</h2>
+      <p>
+        {adhesions.documents.map((doc) => (
+          doc.fichier
+            ? <a href={doc.fichier} class="btn btn--ligne" style="margin:0 8px 8px 0"><i class="ti ti-file-text" aria-hidden="true"></i> {doc.titre} (PDF)</a>
+            : <span class="btn btn--ligne" style="margin:0 8px 8px 0;opacity:.55"><i class="ti ti-file-text" aria-hidden="true"></i> {doc.titre} (à venir)</span>
+        ))}
+      </p>
+
+      <h2>Une question ?</h2>
+      <p>Écrivez-nous : <a href={`mailto:${contact.emailContact}`}>{contact.emailContact}</a></p>
+    </div>
+  </section>
+</Base>

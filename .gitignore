@@ -1,0 +1,17 @@
+# build
+dist/
+.astro/
+
+# deps
+node_modules/
+
+# env
+.env
+.env.production
+
+# os
+.DS_Store
+
+# outils de dev locaux
+.claude/
+.vercel/

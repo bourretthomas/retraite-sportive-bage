@@ -1,0 +1,29 @@
+---
+import Base from '../../layouts/Base.astro';
+import Carrousel from '../../components/Carrousel.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const actus = await getCollection('actus');
+  return actus.map((item) => ({ params: { slug: item.id }, props: { item } }));
+}
+
+const { item } = Astro.props;
+const { Content } = await render(item);
+const d = item.data;
+const photos = d.photos ?? [];
+const dateFr = (x) => new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }).format(x);
+---
+
+<Base titre={d.titre} description={d.resume}>
+  <section class="section">
+    <div class="conteneur contenu">
+      <p class="fil"><a href="/actus">Flash Infos</a> › {d.titre}</p>
+      <p class="carte__date">{dateFr(d.date)}</p>
+      <h1 style="margin:4px 0 14px">{d.titre}</h1>
+      <Carrousel photos={photos} variant="detail" />
+      <Content />
+      <p style="margin-top:28px"><a href="/actus" class="btn btn--ligne">← Retour aux actualités</a></p>
+    </div>
+  </section>
+</Base>

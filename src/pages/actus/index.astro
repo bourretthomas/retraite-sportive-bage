@@ -1,0 +1,34 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { couverture, posCss } from '../../utils/photos.ts';
+
+const actus = (await getCollection('actus')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const dateFr = (d) => new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }).format(d);
+---
+
+<Base titre="Flash Infos" description="Les actualités de l’association.">
+  <section class="section">
+    <div class="conteneur">
+      <h1>Flash Infos</h1>
+      <p style="color:var(--texte-doux)">Toute l’actualité de l’association : sorties, reprises d’activités, événements.</p>
+      <div class="grille-actus" style="margin-top:24px">
+        {actus.map((n) => {
+          const cover = couverture(n.data.photos);
+          return (
+            <a class="carte" href={`/actus/${n.id}`}>
+              <div class="carte__img">
+                {cover ? <img src={cover.image} alt={n.data.titre} style={`object-position:${posCss(cover.position)}`} /> : <i class="ti ti-photo" style="font-size:26px" aria-hidden="true"></i>}
+              </div>
+              <div class="carte__corps">
+                <div class="carte__date">{dateFr(n.data.date)}</div>
+                <div class="carte__titre">{n.data.titre}</div>
+                {n.data.resume && <p class="carte__resume">{n.data.resume}</p>}
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+</Base>

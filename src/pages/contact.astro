@@ -1,0 +1,67 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site.ts';
+import contact from '../data/contact.json';
+---
+
+<Base titre="Contact" description="Contacter la Retraite Sportive Bâge Val de Saône et son comité de direction.">
+  <section class="section">
+    <div class="conteneur">
+      <h1>Nous contacter</h1>
+      <p style="color:var(--texte-doux);max-width:680px">{contact.intro}</p>
+
+      <div class="infos" style="margin-top:20px">
+        <div class="info">
+          <div class="info__label"><i class="ti ti-mail" aria-hidden="true"></i> E-mail</div>
+          <div class="info__valeur"><a href={`mailto:${contact.emailContact}`}>{contact.emailContact}</a></div>
+        </div>
+        <div class="info">
+          <div class="info__label"><i class="ti ti-map-pin" aria-hidden="true"></i> Secteur</div>
+          <div class="info__valeur">{contact.secteur}</div>
+        </div>
+      </div>
+
+      <h2 id="comite" style="margin-top:40px">Comité de direction</h2>
+      <p style="color:var(--texte-doux);max-width:680px">{contact.comiteIntro}</p>
+      <div class="grille-actus" style="margin-top:18px">
+        {contact.membres.map((m) => (
+          <div class="carte" style="padding:18px 18px">
+            <div class="carte__titre">{m.nom}</div>
+            <div style="font-size:0.9rem;color:var(--texte-doux);margin-top:2px">{m.role}</div>
+            {m.email && <a style="font-size:0.88rem;display:inline-block;margin-top:8px" href={`mailto:${m.email}`}>{m.email}</a>}
+          </div>
+        ))}
+      </div>
+
+      <h2 style="margin-top:40px">La fédération</h2>
+      <p style="max-width:680px">{contact.federation}</p>
+      <p style="margin-top:10px"><a href={site.ffrs} target="_blank" rel="noopener" class="btn btn--ligne">Site de la FFRS <i class="ti ti-external-link" aria-hidden="true"></i></a></p>
+
+      {(contact.liensComites?.length || contact.liensClubs?.length) && (
+        <h2 id="liens" style="margin-top:40px">Liens utiles</h2>
+      )}
+
+      {contact.liensComites?.length > 0 && (
+        <>
+          <h3 style="margin-top:18px">Comités de la fédération</h3>
+          <ul class="liens">
+            {contact.liensComites.map((l) => (
+              <li><a href={l.url} target="_blank" rel="noopener">{l.nom} <i class="ti ti-external-link" aria-hidden="true"></i></a></li>
+            ))}
+          </ul>
+        </>
+      )}
+
+      {contact.liensClubs?.length > 0 && (
+        <>
+          <h3 style="margin-top:24px">Autres clubs Retraite Sportive de l’Ain</h3>
+          <ul class="liens">
+            {contact.liensClubs.map((l) => (
+              <li><a href={l.url} target="_blank" rel="noopener">{l.nom} <i class="ti ti-external-link" aria-hidden="true"></i></a></li>
+            ))}
+          </ul>
+        </>
+      )}
+    </div>
+  </section>
+</Base>
