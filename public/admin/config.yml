@@ -4,6 +4,10 @@ backend:
   name: github
   repo: bourretthomas/retraite-sportive-bage
   branch: main
+  # Connexion en ligne via GitHub (fonctions /api/auth et /api/callback sur Vercel).
+  # Après bascule sur le domaine définitif, remplacer par https://retraitesportivebage.com
+  base_url: https://retraite-sportive-bage.vercel.app
+  auth_endpoint: api/auth
 
 # Permet d'éditer en local pendant le développement (npm run cms)
 local_backend: true
