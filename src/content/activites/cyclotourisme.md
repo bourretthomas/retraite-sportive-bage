@@ -13,6 +13,6 @@ photos:
   - { image: /images/activites/cyclotourisme/img-20260424-154348.jpg }
 ---
 
-Sorties à vélo les 2e, 3e et 4e vendredis du mois, de mars à octobre, sur les routes et chemins de la région.
+Sorties à vélo les 2e, 3e et 4e vendredis du mois, de mars à octobre, sur les routes et chemins de la région. Le planning est établi en mars et envoyé aux cyclistes.
 
 En cas de météo incertaine, contactez un animateur pour savoir si la sortie est maintenue (les informations sont aussi relayées dans les Flash Infos).

@@ -22,4 +22,4 @@ photos:
 
 Gymnastique d'entretien pour travailler l'équilibre, la souplesse et le tonus, en douceur et en musique.
 
-Reprise le 18 septembre 2025, fin de saison le 19 juin 2026. Pensez à apporter un tapis de sol. Pendant les vacances scolaires, un seul cours est assuré (9 h – 10 h). Cotisation : 35 € à l'année, en un seul règlement en début de saison.
+Saison 2026-2027 : du jeudi 17 septembre 2026 au 17 juin 2027. Pensez à apporter un tapis de gym. Pendant les vacances scolaires, un seul cours est assuré (9 h – 10 h). Cotisation : 35 € à l'année, en un seul règlement en début de saison.

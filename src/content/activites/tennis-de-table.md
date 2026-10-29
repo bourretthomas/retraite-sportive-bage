@@ -18,4 +18,6 @@ photos:
 
 Le tennis de table pour entretenir réflexes, coordination et convivialité, en simple ou en double, tous niveaux.
 
-Saison de mi-septembre à fin juin. Des tournois inter-clubs sont organisés avec plusieurs clubs de la région.
+Saison 2026-2027 : du lundi 14 septembre 2026 à fin juin 2027, sans interruption pendant les vacances scolaires. Cotisation : 35 € à l'année, payable en une seule fois (chèque séparé à remettre à René Perrin en début de saison).
+
+Des tournois inter-clubs sont organisés avec plusieurs clubs de la région.

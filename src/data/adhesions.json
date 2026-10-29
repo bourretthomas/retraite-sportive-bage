@@ -1,24 +1,13 @@
 {
-  "intro": "L'adhésion est ouverte à toute personne de plus de 50 ans souhaitant pratiquer une ou plusieurs activités dans un cadre convivial. Elle comprend la licence FFRS (assurance incluse).",
-  "cotisation": "À compléter",
-  "licence": "Assurance incluse",
+  "intro": "L'adhésion est ouverte à toute personne de plus de 50 ans souhaitant pratiquer une ou plusieurs activités dans un cadre convivial. Elle comprend la licence FFRS, obligatoire pour toutes les activités (assurance incluse). Pour les nouveaux adhérents, l'inscription papier est obligatoire. Certaines activités (danse, gymnastique, Activ' Mémoire, tennis de table, pickleball) demandent en plus une participation de 35 € à l'année. Le certificat médical n'est plus demandé (loi n° 2022-296 du 2 mars 2022) : consultez les recommandations santé ci-dessous.",
+  "cotisation": "55 € par an (licence FFRS comprise)",
+  "licence": "Obligatoire, assurance incluse",
   "saison": "Septembre → Juin",
   "documents": [
-    {
-      "titre": "Fiche d'inscription 2025-2026",
-      "fichier": "/images/fiche-inscription-2025.pdf"
-    },
-    {
-      "titre": "Recommandations santé",
-      "fichier": "/images/recommandations-sante.pdf"
-    },
-    {
-      "titre": "Droit à l'image",
-      "fichier": "/images/droit-a-l-image.pdf"
-    },
-    {
-      "titre": "Règlement intérieur",
-      "fichier": "/images/reglement-interieur-mis-a-jour-2023-2.pdf"
-    }
+    { "titre": "Fiche d'inscription 2026-2027 (nouveaux adhérents)", "fichier": "/images/fiche-inscription-2026.pdf" },
+    { "titre": "Reprise des activités 2026-2027 (horaires, lieux, tarifs)", "fichier": "/images/reprise-des-activites-2026-2027.pdf" },
+    { "titre": "Recommandations santé", "fichier": "/images/recommandations-sante.pdf" },
+    { "titre": "Droit à l'image (uniquement en cas de refus)", "fichier": "/images/droit-a-l-image.pdf" },
+    { "titre": "Règlement intérieur", "fichier": "/images/reglement-interieur-mis-a-jour-2023-2.pdf" }
   ]
 }

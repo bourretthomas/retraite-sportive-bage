@@ -15,4 +15,4 @@ animateurs:
 
 Le pickleball, mélange de tennis, de badminton et de tennis de table, est un sport ludique et accessible à tous, qui se joue avec une raquette et une balle plastique.
 
-Reprise le mercredi 17 septembre. Cotisation : 35 € par personne à l'année.
+Saison 2026-2027 : reprise le mercredi 16 septembre 2026. Cotisation : 35 € par personne à l'année (chèque séparé à remettre aux animateurs en début de saison).
