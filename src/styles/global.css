@@ -215,6 +215,25 @@ h2 { font-size: 1.5rem; }
 .calendriers__liste { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
 .calendrier--vide { opacity: 0.5; cursor: default; }
 
+/* Chorégraphies (lien sur la fiche danse + sous-page) */
+.lien-choregraphies { margin-top: 34px; }
+.lien-choregraphies h2 { margin: 0 0 12px; }
+.choregraphies { margin-top: 30px; }
+.choregraphies h2 { font-size: 1.2rem; margin: 0 0 10px; }
+.danses {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px;
+}
+.danse {
+  display: flex; align-items: center; gap: 10px; height: 100%;
+  padding: 12px 14px; background: #fff; border: 1px solid var(--vert-bordure);
+  border-radius: var(--rayon); text-decoration: none; color: var(--vert-tres-fonce); font-weight: 600;
+}
+a.danse:hover { border-color: var(--vert); background: var(--vert-clair); }
+.danse i { color: var(--vert); font-size: 1.35em; flex-shrink: 0; }
+.danse--sans-video { color: var(--texte-doux); font-weight: 500; }
+.danse small { font-weight: 400; }
+
 /* ---- Carrousel photos ---- */
 .carrousel { position: relative; margin: 18px 0; }
 .carrousel__cadre { position: relative; }

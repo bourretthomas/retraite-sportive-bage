@@ -91,6 +91,33 @@ collections:
         fields:
           - { name: titre, label: Titre, widget: string }
           - { name: fichier, label: 'Fichier (PDF)', widget: file, required: false }
+      - name: choregraphies
+        label: Cours avec chorégraphies (danse uniquement)
+        label_singular: Cours
+        widget: list
+        required: false
+        collapsed: false
+        summary: '{{fields.cours}}'
+        hint: "Un bloc par cours, avec la liste de ses danses. Elles s'affichent sur une page « Chorégraphies ». Laisser vide pour les autres activités."
+        fields:
+          - { name: cours, label: 'Nom du cours (ex. : Jeudi — cours de 14 h)', widget: string }
+          - name: danses
+            label: Danses
+            label_singular: Danse
+            widget: list
+            required: false
+            collapsed: true
+            summary: '{{fields.titre}}'
+            fields:
+              - { name: titre, label: Nom de la danse, widget: string }
+              - {
+                  name: video,
+                  label: 'Lien de la vidéo (facultatif)',
+                  widget: string,
+                  required: false,
+                  pattern: ['^https?://', "L'adresse doit commencer par https://"],
+                  hint: "Sur YouTube, copiez l'adresse de la vidéo (barre d'adresse ou bouton Partager), puis collez-la ici."
+                }
       - name: photos
         label: Photos (carrousel)
         label_singular: Photo

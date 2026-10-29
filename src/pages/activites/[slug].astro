@@ -15,6 +15,7 @@ const photos = d.photos ?? [];
 const responsables = d.responsables ?? [];
 const animateurs = d.animateurs ?? [];
 const calendriers = d.calendriers ?? [];
+const nbDanses = (d.choregraphies ?? []).reduce((n, c) => n + (c.danses ?? []).length, 0);
 
 const numeros = (t) => (t ? t.split('/').map((s) => s.trim()).filter(Boolean) : []);
 const telHref = (n) => 'tel:' + n.replace(/[^0-9+]/g, '');
@@ -42,6 +43,13 @@ const telHref = (n) => 'tel:' + n.replace(/[^0-9+]/g, '');
       )}
 
       <div class="contenu"><Content /></div>
+
+      {nbDanses > 0 && (
+        <div class="lien-choregraphies">
+          <h2>Chorégraphies</h2>
+          <a href={`/activites/${item.id}/choregraphies`} class="btn btn--vert"><i class="ti ti-music" aria-hidden="true"></i> Voir les {nbDanses} chorégraphies et leurs vidéos</a>
+        </div>
+      )}
 
       {(responsables.length > 0 || animateurs.length > 0) && (
         <div class="encadrement">

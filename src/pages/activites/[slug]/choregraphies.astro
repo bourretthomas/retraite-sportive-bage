@@ -1,0 +1,51 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+// Sous-page générée uniquement pour les activités qui ont des chorégraphies (la danse)
+export async function getStaticPaths() {
+  const activites = await getCollection('activites');
+  return activites
+    .filter((a) => (a.data.choregraphies ?? []).some((c) => (c.danses ?? []).length > 0))
+    .map((item) => ({ params: { slug: item.id }, props: { item } }));
+}
+
+const { item } = Astro.props;
+const d = item.data;
+const cours = (d.choregraphies ?? []).filter((c) => (c.danses ?? []).length > 0);
+---
+
+<Base titre={`Chorégraphies — ${d.titre}`} description="Les chorégraphies de la saison et leurs vidéos de démonstration.">
+  <section class="section">
+    <div class="conteneur">
+      <p class="fil"><a href="/activites">Activités</a> › <a href={`/activites/${item.id}`}>{d.titre}</a> › Chorégraphies</p>
+
+      <div class="fiche__entete">
+        <i class="ti ti-music" aria-hidden="true"></i>
+        <h1 style="margin:0">Chorégraphies</h1>
+      </div>
+      <p style="color:var(--texte-doux);max-width:680px">
+        Les danses travaillées cette saison. Cliquez sur une danse pour voir sa vidéo de démonstration (elle s'ouvre sur YouTube).
+      </p>
+
+      {cours.map((c) => (
+        <div class="choregraphies">
+          <h2>{c.cours}</h2>
+          <ul class="danses">
+            {(c.danses ?? []).map((danse) => (
+              <li>
+                {danse.video
+                  ? <a href={danse.video} class="danse" target="_blank" rel="noopener"><i class="ti ti-brand-youtube" aria-hidden="true"></i> {danse.titre}</a>
+                  : <span class="danse danse--sans-video"><i class="ti ti-music" aria-hidden="true"></i> {danse.titre} <small>(vidéo à venir)</small></span>}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+
+      <p style="margin-top:36px">
+        <a href={`/activites/${item.id}`} class="btn btn--ligne"><i class="ti ti-arrow-left" aria-hidden="true"></i> Retour : {d.titre}</a>
+      </p>
+    </div>
+  </section>
+</Base>

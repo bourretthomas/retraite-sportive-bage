@@ -14,6 +14,15 @@ const activites = defineCollection({
     responsables: z.array(z.object({ nom: z.string(), tel: z.string().optional() })).optional(),
     animateurs: z.array(z.object({ nom: z.string(), tel: z.string().optional() })).optional(),
     calendriers: z.array(z.object({ titre: z.string(), fichier: z.string().optional() })).optional(),
+    // Danse : chorégraphies par cours, affichées sur une sous-page /activites/<slug>/choregraphies
+    choregraphies: z
+      .array(
+        z.object({
+          cours: z.string(),
+          danses: z.array(z.object({ titre: z.string(), video: z.string().optional() })).optional(),
+        })
+      )
+      .optional(),
     photos: z.array(z.object({ image: z.string(), legende: z.string().optional() })).optional(),
   }),
 });
