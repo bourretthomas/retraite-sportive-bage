@@ -9,12 +9,23 @@ export default async function handler(req, res) {
 
   const provider = 'github';
 
+  // Le jeton n'est remis qu'à l'admin du site lui-même : sans cette liste, n'importe quel site
+  // ouvert dans le navigateur d'une bénévole connectée à GitHub pourrait récupérer son jeton.
+  const originesAutorisees = [
+    'https://retraitesportivebage.vercel.app',
+    'https://retraite-sportive-bage.vercel.app',
+    'https://retraitesportivebage.com',
+    'https://www.retraitesportivebage.com',
+  ];
+
   function page(status, contentJson) {
     return `<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>Connexion…</title></head>
 <body style="font-family: system-ui, sans-serif; text-align:center; padding:2rem;">
 <script>
 (function () {
+  var autorisees = ${JSON.stringify(originesAutorisees)};
   function receiveMessage(e) {
+    if (autorisees.indexOf(e.origin) === -1) return;
     window.opener.postMessage('authorization:${provider}:${status}:${contentJson}', e.origin);
     window.removeEventListener('message', receiveMessage, false);
   }

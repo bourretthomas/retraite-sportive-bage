@@ -19,7 +19,9 @@ export default function handler(req, res) {
     'https://github.com/login/oauth/authorize' +
     `?client_id=${encodeURIComponent(clientId)}` +
     `&redirect_uri=${encodeURIComponent(redirectUri)}` +
-    '&scope=repo' +
+    // public_repo suffit depuis que le dépôt est public, et le jeton ne donne alors aucun accès
+    // aux dépôts privés de la personne connectée. Si le dépôt redevient privé, remettre "repo".
+    '&scope=public_repo' +
     `&state=${encodeURIComponent(state)}`;
 
   res.writeHead(302, { Location: authorizeUrl });
