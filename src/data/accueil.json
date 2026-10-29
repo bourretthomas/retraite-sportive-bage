@@ -4,7 +4,8 @@
   "intro": "Dix activités encadrées toute l’année dans le Val de Saône, pour les plus de 50 ans, dans la convivialité.",
   "photos": [
     {
-      "image": "/images/groupe-bage.jpg"
+      "image": "/images/groupe-bage.jpg",
+      "legende": "Groupe Bage "
     }
   ]
 }
