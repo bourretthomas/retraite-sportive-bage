@@ -3,14 +3,19 @@ import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 
 const activites = (await getCollection('activites')).sort((a, b) => a.data.titre.localeCompare(b.data.titre, 'fr'));
+
+// Le nombre d'activités suit automatiquement les ajouts / suppressions faits dans l'admin.
+const nombres = ['zéro', 'une', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf', 'dix', 'onze', 'douze', 'treize', 'quatorze', 'quinze', 'seize', 'dix-sept', 'dix-huit', 'dix-neuf', 'vingt'];
+const nombre = nombres[activites.length] ?? String(activites.length);
+const Nombre = nombre.charAt(0).toUpperCase() + nombre.slice(1);
 ---
 
-<Base titre="Nos activités" description="Les onze activités de la Retraite Sportive Bâge Val de Saône.">
+<Base titre="Nos activités" description={`Les ${nombre} activités de la Retraite Sportive Bâge Val de Saône.`}>
   <section class="section">
     <div class="conteneur">
       <h1>Nos activités</h1>
       <p style="color:var(--texte-doux);max-width:680px">
-        Onze disciplines encadrées par des animateurs formés. Cliquez sur une activité pour le détail (jours, horaires, lieu).
+        {Nombre} disciplines encadrées par des animateurs formés. Cliquez sur une activité pour le détail (jours, horaires, lieu).
       </p>
       <div class="grille-actus" style="margin-top:24px">
         {activites.map((a) => (

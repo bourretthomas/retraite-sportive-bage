@@ -4,7 +4,7 @@ export const site = {
   sousNom: 'Bâge Val de Saône',
   // Description par défaut (balise meta) — le texte du bandeau d'accueil se modifie dans Accueil (accueil.json / admin).
   intro:
-    'Onze activités encadrées toute l’année dans le Val de Saône, pour les plus de 50 ans, dans la convivialité.',
+    'Des activités sportives encadrées toute l’année dans le Val de Saône, pour les plus de 50 ans, dans la convivialité.',
   ffrs: 'https://www.ffrs-retraite-sportive.org/',
   affiliation: 'FFRS · CORERS · CODERS — agréée par le Ministère des Sports',
   nav: [
