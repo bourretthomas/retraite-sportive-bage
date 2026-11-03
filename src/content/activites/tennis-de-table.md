@@ -14,6 +14,12 @@ animateurs:
   - nom: Pierre Masera
   - nom: Yves Pelletier
 photos:
+  - image: /images/reprise-activité-14-septembre-2026-1.jpg
+  - image: /images/reprise-activité-14-septembre-2026-3.jpg
+  - image: /images/journée-initiation-avec-prof-le-9-juillet-2026.jpg
+  - image: /images/reprise-activité-14-septembre-2026-2-.jpg
+  - image: /images/reprise-activité-14-septembre-2026-4.jpg
+  - image: /images/reprise-activité-14-septembre-2026-5.jpg
   - image: /images/reprise-activité-14-septembre-2026.jpg
 ---
 
