@@ -15,7 +15,4 @@ photos:
   - image: /images/thumbnail-1-.jpg
   - image: /images/001.jpg
 ---
-
 Le bowling se pratique sur quelques dates réparties dans l'année, dans une ambiance détendue et conviviale.
-
-**Calendrier 2026-2027** : les dates seront indiquées ici prochainement.
