@@ -1,23 +1,26 @@
 ---
 titre: Gymnastique
 icone: ti-stretching
-resume: "Gymnastique d'entretien : équilibre, souplesse et renforcement musculaire en douceur, en musique."
+resume: "Gymnastique d'entretien : équilibre, souplesse et renforcement
+  musculaire en douceur, en musique."
 jours: Jeudi
-horaires: 9 h 15 – 10 h 15 et 10 h 30 – 11 h 30 (un seul cours 9 h – 10 h pendant les vacances scolaires)
+horaires: 9 h 15 – 10 h 15 et 10 h 30 – 11 h 30 (un seul cours 9 h – 10 h
+  pendant les vacances scolaires)
 lieu: Salle de réception à Bâgé-la-Ville (à droite de la mairie)
 responsables:
-  - { nom: "Joëlle Franchi", tel: "06 25 91 52 58" }
+  - nom: Joëlle Franchi
+    tel: 06 25 91 52 58
 animateurs:
-  - { nom: "Michèle Blanc" }
-  - { nom: "Nicole Goyon" }
+  - nom: Michèle Blanc
+  - nom: Nicole Goyon
 photos:
-  - { image: /images/activites/gymnastique/aaaagym.jpg }
-  - { image: /images/activites/gymnastique/gym1.jpg }
-  - { image: /images/activites/gymnastique/gym2.jpg }
-  - { image: /images/activites/gymnastique/gym3.jpg }
-  - { image: /images/activites/gymnastique/gymm.jpg }
-  - { image: /images/activites/gymnastique/gymm1.jpg }
-  - { image: /images/activites/gymnastique/gymm2.jpg }
+  - image: /images/20251218_090749.jpg
+  - image: /images/20251218_100900.jpg
+  - image: /images/20260108_110949.jpg
+  - image: /images/20260618_090930.jpg
+  - image: /images/20260618_095449.jpg
+  - image: /images/20260618_123915.jpg
+  - image: /images/20260618_124031.jpg
 ---
 
 Gymnastique d'entretien pour travailler l'équilibre, la souplesse et le tonus, en douceur et en musique.
