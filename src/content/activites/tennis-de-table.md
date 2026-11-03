@@ -1,19 +1,20 @@
 ---
 titre: Tennis de Table
 icone: ti-ping-pong
-resume: "Le ping-pong pour entretenir réflexes et coordination, en simple ou en double."
+resume: Le ping-pong pour entretenir réflexes et coordination, en simple ou en double.
 jours: Lundi
 horaires: 16 h 45 – 19 h
 lieu: Gymnase de Bâgé-la-Ville
 responsables:
-  - { nom: "René Perrin", tel: "03 85 32 42 99 / 06 75 69 87 03" }
+  - nom: René Perrin
+    tel: 03 85 32 42 99 / 06 75 69 87 03
 animateurs:
-  - { nom: "Henri Benejan" }
-  - { nom: "Yves Houstin" }
-  - { nom: "Pierre Masera" }
-  - { nom: "Yves Pelletier" }
+  - nom: Henri Benejan
+  - nom: Yves Houstin
+  - nom: Pierre Masera
+  - nom: Yves Pelletier
 photos:
-  - { image: /images/activites/tennis-de-table/20250106-192300.jpg }
+  - image: /images/reprise-activité-14-septembre-2026.jpg
 ---
 
 Le tennis de table pour entretenir réflexes, coordination et convivialité, en simple ou en double, tous niveaux.
