@@ -1,10 +1,7 @@
 ---
 titre: Reprise des activités 2026-2027
 date: 2026-09-14
-photos:
-  - position: 50% 50%
-    couverture: false
-    image: /images/groupe-bage.jpg
+photos: []
 resume: Jours, horaires, lieux et tarifs de toutes les activités pour la saison
   2026-2027.
 ---
