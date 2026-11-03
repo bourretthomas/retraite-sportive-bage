@@ -5,6 +5,7 @@ photos:
   - position: 50% 50%
     couverture: true
     image: /images/1solutre-3-avril.jpg
-resume: " Départ à 13 h 30  du parking de la salle polyvalente"
+    legende: " Départ à 13 h 30  du parking de la salle polyvalente"
+resume: ""
 ---
-
+.
