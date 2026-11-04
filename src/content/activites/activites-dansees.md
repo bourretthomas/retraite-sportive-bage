@@ -25,6 +25,14 @@ choregraphies:
         titre: MISTER SHOWMAN
       - video: https://www.youtube.com/watch?v=XpNvTMuxN7s
         titre: CALUM'S RISE
+      - video: https://www.youtube.com/watch?v=twOYuGiG2EM
+        titre: AN ABSOLUTE DREAM
+      - titre: OH NO DESPACITO
+        video: https://www.youtube.com/watch?v=GTrUUgTNjo8
+      - titre: MAKE IT SPECTACULAR
+        video: https://www.youtube.com/watch?v=VsA5y6h_RJE
+      - titre: ZOO
+        video: https://music.youtube.com/watch?v=ZIRt7Yzs0JI
   - cours: Mardi — cours débutant(e)s - 10 h 25
     danses:
       - titre: EZ La Señorita
