@@ -34,27 +34,9 @@ choregraphies:
       - titre: ZOO
         video: https://music.youtube.com/watch?v=ZIRt7Yzs0JI
   - cours: Mardi — cours débutant(e)s - 10 h 25
-    danses:
-      - titre: EZ La Señorita
-        video: https://www.youtube.com/watch?v=_gj2Xt7xPYA
-      - titre: FK and Easy
-        video: https://www.youtube.com/watch?v=9mHLq6385Uc
-      - titre: Calum's Rise
-        video: https://www.youtube.com/watch?v=XpNvTMuxN7s
+    danses: []
   - cours: Jeudi — cours de 14 h
-    danses:
-      - titre: Who Needs to Know
-        video: https://www.youtube.com/watch?v=7ScFOvFrJqM
-      - titre: Some Beach
-        video: https://www.youtube.com/watch?v=my8QofIjuUk
-      - titre: Elvis Tonight
-        video: https://www.youtube.com/watch?v=iBzln1OAEkQ
-      - titre: Feeling Kinda Lonely
-        video: https://www.youtube.com/watch?v=EBJk2fo-tzU
-      - titre: You Are My Sunshine
-        video: https://www.youtube.com/watch?v=38GoqNerY2I
-      - titre: The First Waltz
-        video: https://www.youtube.com/watch?v=NDW4YgFTP3s
+    danses: []
 photos:
   - image: /images/activites/activites-dansees/groupe-bage.jpg
   - image: /images/activites/activites-dansees/ensemble.jpg
