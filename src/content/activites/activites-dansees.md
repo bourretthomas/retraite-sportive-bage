@@ -28,11 +28,7 @@ choregraphies:
         video: https://www.youtube.com/watch?v=-LjJs1jAopc
       - titre: Let's Do Da Dance
         video: https://www.youtube.com/watch?v=pOQserOpohA
-  - cours: Mardi — danse commune (10 h – 10 h 15)
-    danses:
-      - titre: Azizam
-        video: https://www.youtube.com/watch?v=8dlgWQrv1E4
-  - cours: Mardi — cours débutant(e)s (10 h)
+  - cours: Mardi — cours débutant(e)s - 10 h 25
     danses:
       - titre: EZ La Señorita
         video: https://www.youtube.com/watch?v=_gj2Xt7xPYA
