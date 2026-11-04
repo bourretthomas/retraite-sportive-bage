@@ -34,7 +34,13 @@ choregraphies:
       - titre: ZOO
         video: https://music.youtube.com/watch?v=ZIRt7Yzs0JI
   - cours: Mardi — cours débutant(e)s - 10 h 25
-    danses: []
+    danses:
+      - titre: AZIZAM
+        video: https://www.youtube.com/watch?v=8dlgWQrv1E4
+      - titre: I LOVE THAT DANSE
+        video: https://www.youtube.com/watch?v=_VkENTU_GB4
+      - video: https://www.youtube.com/watch?v=0tCWrJnL1rY
+        titre: BEGINNER STROLL
   - cours: Jeudi — cours de 14 h
     danses: []
 photos:
