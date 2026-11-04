@@ -19,7 +19,7 @@ animateurs:
   - nom: Noëlle Talon
     tel: 06 80 82 30 13
 choregraphies:
-  - cours: Mardi — 1er cours (8 h 45)
+  - cours: Mardi 10  novembre - 1er cours 8 h 45
     danses:
       - video: https://www.youtube.com/watch?v=9vNn3w71ZI0
         titre: MISTER SHOWMAN
@@ -33,7 +33,7 @@ choregraphies:
         video: https://www.youtube.com/watch?v=VsA5y6h_RJE
       - titre: ZOO
         video: https://music.youtube.com/watch?v=ZIRt7Yzs0JI
-  - cours: Mardi — cours débutant(e)s - 10 h 25
+  - cours: Mardi 10 novembre - cours débutant(e)s - 10 h 25
     danses:
       - titre: AZIZAM
         video: https://www.youtube.com/watch?v=8dlgWQrv1E4
