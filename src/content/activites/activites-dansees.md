@@ -21,13 +21,8 @@ animateurs:
 choregraphies:
   - cours: Mardi — 1er cours (8 h 45)
     danses:
-      - titre: Going Blonde
-      - titre: Stomp 2-3-4
-        video: https://www.youtube.com/watch?v=HncQz26Z4dY
-      - titre: Bigger Houses
-        video: https://www.youtube.com/watch?v=-LjJs1jAopc
-      - titre: Let's Do Da Dance
-        video: https://www.youtube.com/watch?v=pOQserOpohA
+      - video: https://www.youtube.com/watch?v=9vNn3w71ZI0
+        titre: MISTER SHOWMAN
   - cours: Mardi — cours débutant(e)s - 10 h 25
     danses:
       - titre: EZ La Señorita
