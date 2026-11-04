@@ -23,6 +23,8 @@ choregraphies:
     danses:
       - video: https://www.youtube.com/watch?v=9vNn3w71ZI0
         titre: MISTER SHOWMAN
+      - video: https://www.youtube.com/watch?v=XpNvTMuxN7s
+        titre: CALUM'S RISE
   - cours: Mardi — cours débutant(e)s - 10 h 25
     danses:
       - titre: EZ La Señorita
