@@ -53,7 +53,7 @@ choregraphies:
         video: https://youtu.be/lPkpTTDnC4c?si=Ldy2gZlT7RLJ7A1j
       - titre: I NEED TO KNOW
         video: https://youtu.be/eiGtDzNi-q0?si=0Cg1UQ2EXI8voa5t
-      - titre: RADESKY MARCHE
+      - titre: RADETZKY MARSCH
         video: https://youtu.be/cRb7UXQcKhk?si=KTFoIIPl_0ChxMyg
 photos:
   - image: /images/activites/activites-dansees/groupe-bage.jpg
