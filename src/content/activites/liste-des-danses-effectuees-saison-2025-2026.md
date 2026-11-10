@@ -38,6 +38,7 @@ choregraphies:
         video: https://www.youtube.com/watch?v=A4r4--btbxs
       - titre: BEGINNER STROLL
         video: https://www.youtube.com/watch?v=hbsdtLq_vXc
+  - cours: JEUDI 12 novembre  14 h - 16 h
 photos: []
 ---
 
