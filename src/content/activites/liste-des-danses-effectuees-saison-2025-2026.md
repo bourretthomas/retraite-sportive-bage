@@ -34,5 +34,9 @@ choregraphies:
     danses:
       - titre: AZIZAM
         video: https://www.youtube.com/watch?v=8dlgWQrv1E4
+      - titre: BEGINNER STROLL
+        video: https://www.youtube.com/watch?v=hbsdtLq_vXc
+      - titre: DANCE BY MY SIDE
+        video: https://www.youtube.com/watch?v=A4r4--btbxs
 ---
 XX
