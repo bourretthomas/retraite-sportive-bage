@@ -30,13 +30,11 @@ choregraphies:
         video: https://www.youtube.com/watch?v=bltFq_yEr6s
       - titre: JIVE ALL NIGHT
         video: https://www.isanewlinedanse.fr/jive-all-night/
-  - cours: "MARDI 17 novembre - Danseuses débutantes - 10 h 15 - 11 h 45 "
+  - cours: MARDI 17 novembre - 10 h 15 - 11 h 45
     danses:
       - titre: AZIZAM
-        video: https://www.youtube.com/watch?v=8dlgWQrv1E4
-      - titre: BEGINNER STROLL
-        video: https://www.youtube.com/watch?v=hbsdtLq_vXc
       - titre: DANCE BY MY SIDE
         video: https://www.youtube.com/watch?v=A4r4--btbxs
+photos: []
 ---
-XX
+
