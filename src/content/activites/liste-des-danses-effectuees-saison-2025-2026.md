@@ -36,6 +36,8 @@ choregraphies:
         video: https://www.youtube.com/watch?v=8dlgWQrv1E4
       - titre: DANCE BY MY SIDE
         video: https://www.youtube.com/watch?v=A4r4--btbxs
+      - titre: BEGINNER STROLL
+        video: https://www.youtube.com/watch?v=hbsdtLq_vXc
 photos: []
 ---
 
