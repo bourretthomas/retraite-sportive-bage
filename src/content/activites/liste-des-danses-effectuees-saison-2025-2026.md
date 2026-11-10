@@ -1,5 +1,5 @@
 ---
-titre: ACTIVITE DANSEE
+titre: Activités dansées
 icone: ti-music
 resume: "Les bienfaits de la danse en ligne ne sont plus à démontrer :
   coordonner la tête et les jambes, partager un bon moment en toute
