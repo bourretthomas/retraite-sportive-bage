@@ -54,5 +54,8 @@ choregraphies:
         titre: RADETZKYMARSCH
 photos:
   - image: /images/groupe-bage.jpg
+  - image: /images/igjp1929.jpg
+  - image: /images/ensemble.jpg
+  - image: /images/ensemble.jpg
 ---
 .
