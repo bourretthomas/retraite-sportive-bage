@@ -15,6 +15,20 @@ animateurs:
     tel: 06.80.82.30.13
   - nom: Brigitte FRONTIERE
     tel: 06.19.33.10.71
-choregraphies: []
+choregraphies:
+  - cours: "MARDI  17 novembre - 8 h 45 - 10 h 15 : danseuses confirmées "
+    danses:
+      - titre: ZOO
+        video: https://www.youtube.com/watch?v=50H0vyGoI6w
+      - titre: MISTER SHOWMAN
+        video: https://www.youtube.com/watch?v=4_eAjAWHgB0
+      - titre: MOVIMIENTO
+        video: https://www.youtube.com/watch?v=Q5n0ZcZ4YXA
+      - titre: LET'S DO DA DANCE
+        video: https://www.youtube.com/watch?v=pOQserOpohA
+      - titre: STOMP 2,3,4
+        video: https://www.youtube.com/watch?v=bltFq_yEr6s
+      - titre: JIVE ALL NIGHT
+        video: https://www.isanewlinedanse.fr/jive-all-night/
 ---
-
+XX
