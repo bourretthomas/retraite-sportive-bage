@@ -44,6 +44,11 @@ choregraphies:
         video: https://youtu.be/z-XNuLVxEX0?si=BYo4G7FDv1zNC55w
       - video: https://youtu.be/LIzy9jCIg2w?si=gdyGjnMQTGP2j_Xj
         titre: NATALIA'S COUNTRY
+      - titre: RHUMBUMBUMBA
+      - titre: GOING BLONDE
+        video: https://youtu.be/lPkpTTDnC4c?si=Ldy2gZlT7RLJ7A1j
+      - video: https://youtu.be/eiGtDzNi-q0?si=0Cg1UQ2EXI8voa5t
+        titre: I NEED TO KNOW
 photos: []
 ---
 
