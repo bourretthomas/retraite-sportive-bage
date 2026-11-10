@@ -3,9 +3,8 @@ titre: Activités dansées
 icone: ti-music
 resume: Danse en ligne, country et latino, en groupes débutants et
   intermédiaires, pour bouger en musique.
-jours: Mardi et jeudi
-horaires: Mardi 8 h 45 – 10 h 15 (confirmées) · 10 h 25 – 10 h 50 (débutant(e)s)
-  · Jeudi 14 h – 16 h (intermédiaire)
+jours: MARDI et JEUDI
+horaires: ""
 lieu: Salle des fêtes de Bâgé-la-Ville (mardi) · Salle face à la mairie
   de  Bâgé-le-Châtel (jeudi)
 responsables:
@@ -19,7 +18,7 @@ animateurs:
   - nom: Noëlle Talon
     tel: 06 80 82 30 13
 choregraphies:
-  - cours: Mardi 10  novembre - 1er cours 8 h 45
+  - cours: Mardi 10  novembre - 1er cours 8 h 45 - 10 H 15
     danses:
       - video: https://www.youtube.com/watch?v=9vNn3w71ZI0
         titre: MISTER SHOWMAN
@@ -33,7 +32,7 @@ choregraphies:
         video: https://www.youtube.com/watch?v=VsA5y6h_RJE
       - titre: ZOO
         video: https://music.youtube.com/watch?v=ZIRt7Yzs0JI
-  - cours: Mardi 10 novembre - cours débutant(e)s - 10 h 25
+  - cours: Mardi 10 novembre - cours débutant(e)s - 10 h 15 - 11 h 45
     danses:
       - titre: AZIZAM
         video: https://www.youtube.com/watch?v=8dlgWQrv1E4
