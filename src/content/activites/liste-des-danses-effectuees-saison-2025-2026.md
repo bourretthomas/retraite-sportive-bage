@@ -49,6 +49,8 @@ choregraphies:
         video: https://youtu.be/lPkpTTDnC4c?si=Ldy2gZlT7RLJ7A1j
       - video: https://youtu.be/eiGtDzNi-q0?si=0Cg1UQ2EXI8voa5t
         titre: I NEED TO KNOW
+      - video: https://youtu.be/cRb7UXQcKhk?si=KTFoIIPl_0ChxMyg
+        titre: RADETZKYMARSCH
 photos: []
 ---
 
