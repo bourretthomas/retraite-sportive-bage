@@ -39,6 +39,11 @@ choregraphies:
       - titre: BEGINNER STROLL
         video: https://www.youtube.com/watch?v=hbsdtLq_vXc
   - cours: JEUDI 12 novembre  14 h - 16 h
+    danses:
+      - titre: IN THE FUN
+        video: https://youtu.be/z-XNuLVxEX0?si=BYo4G7FDv1zNC55w
+      - video: https://youtu.be/LIzy9jCIg2w?si=gdyGjnMQTGP2j_Xj
+        titre: NATALIA'S COUNTRY
 photos: []
 ---
 
