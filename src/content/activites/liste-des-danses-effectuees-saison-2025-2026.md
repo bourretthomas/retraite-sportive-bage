@@ -52,6 +52,7 @@ choregraphies:
         titre: I NEED TO KNOW
       - video: https://youtu.be/cRb7UXQcKhk?si=KTFoIIPl_0ChxMyg
         titre: RADETZKYMARSCH
-photos: []
+photos:
+  - image: /images/groupe-bage.jpg
 ---
 .
