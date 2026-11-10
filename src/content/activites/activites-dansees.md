@@ -69,8 +69,8 @@ photos:
 
 **Le mardi**, salle des fêtes de Bâgé-la-Ville :
 
-- **8 h 45 – 10 h** : danse en ligne, country, latino (connaissance des pas de base souhaitée)
-- **10 h – 11 h 30** : danses en ligne pour débutant(e)s
+- **8 h 45 – 10 h 15** : danse en ligne, country, latino (connaissance des pas de base souhaitée)
+- **10 h 15 – 11 h 45** : danses en ligne pour débutant(e)s
 
 **Le jeudi, 14 h – 16 h**, salle de l'ancienne cantine près de la salle des fêtes de Bâgé-le-Châtel : niveau intermédiaire, pour débutantes confirmées.
 
