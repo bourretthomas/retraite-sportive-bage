@@ -33,6 +33,7 @@ choregraphies:
   - cours: MARDI 17 novembre - 10 h 15 - 11 h 45
     danses:
       - titre: AZIZAM
+        video: https://www.youtube.com/watch?v=8dlgWQrv1E4
       - titre: DANCE BY MY SIDE
         video: https://www.youtube.com/watch?v=A4r4--btbxs
 photos: []
