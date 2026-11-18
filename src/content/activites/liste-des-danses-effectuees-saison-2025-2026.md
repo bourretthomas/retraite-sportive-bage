@@ -38,7 +38,7 @@ choregraphies:
         video: https://www.youtube.com/watch?v=A4r4--btbxs
       - titre: BEGINNER STROLL
         video: https://www.youtube.com/watch?v=hbsdtLq_vXc
-  - cours: JEUDI 12 novembre  14 h - 16 h
+  - cours: JEUDI 19 novembre  14 h - 16 h
     danses:
       - titre: IN THE FUN
         video: https://youtu.be/z-XNuLVxEX0?si=BYo4G7FDv1zNC55w
@@ -52,6 +52,8 @@ choregraphies:
         titre: I NEED TO KNOW
       - video: https://youtu.be/cRb7UXQcKhk?si=KTFoIIPl_0ChxMyg
         titre: RADETZKYMARSCH
+      - titre: R & R
+        video: https://youtu.be/GVkBGi-2Ads?si=J6fkKkr2jogfMhfn
 photos:
   - image: /images/groupe-bage.jpg
   - image: /images/igjp1929.jpg
