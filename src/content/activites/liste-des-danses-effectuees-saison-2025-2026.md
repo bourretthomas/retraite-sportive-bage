@@ -28,6 +28,8 @@ choregraphies:
         video: https://www.youtube.com/watch?v=B_j5yTJbGmo
       - titre: MY NEW LIFE
         video: https://www.youtube.com/watch?v=NjHP2zcT8ic
+      - titre: DESPACITO
+        video: https://www.youtube.com/watch?v=5bQ_znyzEY8
   - cours: MARDI 17 novembre - 10 h 15 - 11 h 45
     danses:
       - titre: AZIZAM
