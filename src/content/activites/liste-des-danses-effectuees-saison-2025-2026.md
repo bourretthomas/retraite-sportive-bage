@@ -46,8 +46,10 @@ choregraphies:
         video: https://www.youtube.com/watch?v=MJnhHJXS1Co
   - cours: "RECAPITULATIF DANSES DU MARDI "
     danses:
-      - titre: JIVE ALL NIGHT
+      - titre: JIVE ALL NIGHT (Danse de présentation du club pour la JDD du 6 avril)
         video: https://youtube.com/watch?v=gYb5PX1rZn0&is=FJr_YcxIW5OO3i5K
+      - video: https://www.youtube.com/watch?v=8dlgWQrv1E4
+        titre: AZIZAM
 photos:
   - image: /images/groupe-bage.jpg
   - image: /images/igjp1929.jpg
