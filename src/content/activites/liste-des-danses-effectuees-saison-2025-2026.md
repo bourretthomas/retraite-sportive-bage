@@ -24,8 +24,6 @@ choregraphies:
         video: https://www.youtube.com/watch?v=4_eAjAWHgB0
       - titre: MOVIMIENTO
         video: https://www.youtube.com/watch?v=Q5n0ZcZ4YXA
-      - titre: LET'S DO DA DANCE
-        video: https://www.youtube.com/watch?v=pOQserOpohA
       - titre: STOMP 2,3,4
         video: https://www.youtube.com/watch?v=bltFq_yEr6s
       - titre: JIVE ALL NIGHT
@@ -55,4 +53,6 @@ photos:
   - image: /images/igjp1929.jpg
   - image: /images/ensemble.jpg
 ---
-.
+Cours du mardi. Danses apprises
+
+ https://www.youtube.com/watch?v=bltFq_yEr6s
