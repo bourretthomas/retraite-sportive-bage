@@ -50,6 +50,8 @@ choregraphies:
         video: https://youtube.com/watch?v=gYb5PX1rZn0&is=FJr_YcxIW5OO3i5K
       - video: https://www.youtube.com/watch?v=8dlgWQrv1E4
         titre: AZIZAM
+      - titre: LET'S DO DA DANCE
+        video: https://www.youtube.com/watch?v=pOQserOpohA
 photos:
   - image: /images/groupe-bage.jpg
   - image: /images/igjp1929.jpg
