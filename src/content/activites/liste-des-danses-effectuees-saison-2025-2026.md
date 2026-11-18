@@ -30,14 +30,16 @@ choregraphies:
         video: https://www.youtube.com/watch?v=NjHP2zcT8ic
       - titre: DESPACITO
         video: https://www.youtube.com/watch?v=5bQ_znyzEY8
-  - cours: MARDI 17 novembre - 10 h 15 - 11 h 45
+  - cours: MARDI 24 novembre - 10 h 20 - 11 h 50
     danses:
       - titre: AZIZAM
         video: https://www.youtube.com/watch?v=8dlgWQrv1E4
       - titre: DANCE BY MY SIDE
         video: https://www.youtube.com/watch?v=A4r4--btbxs
-      - titre: BEGINNER STROLL
-        video: https://www.youtube.com/watch?v=hbsdtLq_vXc
+      - titre: JIVE ALL NIGHT
+        video: https://youtube.com/watch?v=gYb5PX1rZn0&is=FJr_YcxIW5OO3i5K
+      - titre: MAMBO UP
+        video: https://www.youtube.com/watch?v=sr3sOtZZoxg
   - cours: JEUDI 19 novembre  14 h - 16 h
     danses:
       - titre: R & R
