@@ -24,6 +24,8 @@ choregraphies:
         video: https://www.youtube.com/watch?v=4_eAjAWHgB0
       - titre: MOVIMIENTO
         video: https://www.youtube.com/watch?v=Q5n0ZcZ4YXA
+      - titre: DIGIDI DIGIDI (danse proposée par notre club pour la JDD)
+        video: https://www.youtube.com/watch?v=B_j5yTJbGmo
   - cours: MARDI 17 novembre - 10 h 15 - 11 h 45
     danses:
       - titre: AZIZAM
