@@ -58,6 +58,8 @@ choregraphies:
         video: https://youtu.be/Yvg2d3FKMwU?si=yMMqUZzXAAr2AU_5
       - titre: DADY COOL
         video: https://youtu.be/jLX386c5a0w?si=5zlEnRUwp_2doz0u
+      - video: https://youtu.be/KX_0ug6h7Tg?si=weNxSXXg8QkTwFI1
+        titre: HILLBILLY GIRL
 photos:
   - image: /images/groupe-bage.jpg
   - image: /images/igjp1929.jpg
