@@ -40,18 +40,6 @@ choregraphies:
         video: https://www.youtube.com/watch?v=hbsdtLq_vXc
   - cours: JEUDI 19 novembre  14 h - 16 h
     danses:
-      - titre: IN THE FUN
-        video: https://youtu.be/z-XNuLVxEX0?si=BYo4G7FDv1zNC55w
-      - video: https://youtu.be/LIzy9jCIg2w?si=gdyGjnMQTGP2j_Xj
-        titre: NATALIA'S COUNTRY
-      - titre: RHUMBUMBUMBA
-        video: https://www.youtube.com/watch?v=qEETpfycn5Q
-      - titre: GOING BLONDE
-        video: https://youtu.be/lPkpTTDnC4c?si=Ldy2gZlT7RLJ7A1j
-      - video: https://youtu.be/eiGtDzNi-q0?si=0Cg1UQ2EXI8voa5t
-        titre: I NEED TO KNOW
-      - video: https://youtu.be/cRb7UXQcKhk?si=KTFoIIPl_0ChxMyg
-        titre: RADETZKYMARSCH
       - titre: R & R
         video: https://youtu.be/GVkBGi-2Ads?si=J6fkKkr2jogfMhfn
       - titre: BEAUTIFUL DAY
@@ -60,6 +48,8 @@ choregraphies:
         video: https://youtu.be/jLX386c5a0w?si=5zlEnRUwp_2doz0u
       - video: https://youtu.be/KX_0ug6h7Tg?si=weNxSXXg8QkTwFI1
         titre: HILLBILLY GIRL
+      - titre: NATALIA'S COUNTRY
+        video: https://www.youtube.com/watch?v=MJnhHJXS1Co
 photos:
   - image: /images/groupe-bage.jpg
   - image: /images/igjp1929.jpg
