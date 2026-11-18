@@ -27,7 +27,7 @@ choregraphies:
       - titre: DIGIDI DIGIDI (danse proposée par notre club pour la JDD)
         video: https://www.youtube.com/watch?v=B_j5yTJbGmo
       - titre: MY NEW LIFE
-        video: https://www.youtube.com/watch?v=_jIfq94BCLA
+        video: https://www.youtube.com/watch?v=NjHP2zcT8ic
   - cours: MARDI 17 novembre - 10 h 15 - 11 h 45
     danses:
       - titre: AZIZAM
