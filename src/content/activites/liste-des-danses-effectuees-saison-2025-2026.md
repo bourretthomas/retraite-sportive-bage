@@ -56,6 +56,8 @@ choregraphies:
         video: https://youtu.be/GVkBGi-2Ads?si=J6fkKkr2jogfMhfn
       - titre: BEAUTIFUL DAY
         video: https://youtu.be/Yvg2d3FKMwU?si=yMMqUZzXAAr2AU_5
+      - titre: DADY COOL
+        video: https://youtu.be/jLX386c5a0w?si=5zlEnRUwp_2doz0u
 photos:
   - image: /images/groupe-bage.jpg
   - image: /images/igjp1929.jpg
