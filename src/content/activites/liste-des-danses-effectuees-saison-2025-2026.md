@@ -54,6 +54,8 @@ choregraphies:
         titre: RADETZKYMARSCH
       - titre: R & R
         video: https://youtu.be/GVkBGi-2Ads?si=J6fkKkr2jogfMhfn
+      - titre: BEAUTIFUL DAY
+        video: https://youtu.be/Yvg2d3FKMwU?si=yMMqUZzXAAr2AU_5
 photos:
   - image: /images/groupe-bage.jpg
   - image: /images/igjp1929.jpg
