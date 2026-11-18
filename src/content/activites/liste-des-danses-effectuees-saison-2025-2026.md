@@ -16,7 +16,7 @@ animateurs:
   - nom: Brigitte FRONTIERE
     tel: 06.19.33.10.71
 choregraphies:
-  - cours: "MARDI  17 novembre - 8 h 45 - 10 h 15 : danseuses confirmées "
+  - cours: "MARDI  24 novembre - 8 h 45 - 10 h 15 : danseuses confirmées "
     danses:
       - titre: ZOO
         video: https://www.youtube.com/watch?v=50H0vyGoI6w
@@ -24,10 +24,6 @@ choregraphies:
         video: https://www.youtube.com/watch?v=4_eAjAWHgB0
       - titre: MOVIMIENTO
         video: https://www.youtube.com/watch?v=Q5n0ZcZ4YXA
-      - titre: STOMP 2,3,4
-        video: https://www.youtube.com/watch?v=bltFq_yEr6s
-      - titre: JIVE ALL NIGHT
-        video: https://www.isanewlinedanse.fr/jive-all-night/
   - cours: MARDI 17 novembre - 10 h 15 - 11 h 45
     danses:
       - titre: AZIZAM
@@ -48,11 +44,14 @@ choregraphies:
         titre: HILLBILLY GIRL
       - titre: NATALIA'S COUNTRY
         video: https://www.youtube.com/watch?v=MJnhHJXS1Co
+  - cours: "RECAPITULATIF DANSES DU MARDI "
+    danses:
+      - titre: JIVE ALL NIGHT
+        video: https://youtube.com/watch?v=gYb5PX1rZn0&is=FJr_YcxIW5OO3i5K
 photos:
   - image: /images/groupe-bage.jpg
   - image: /images/igjp1929.jpg
   - image: /images/ensemble.jpg
+    legende: ""
 ---
-Cours du mardi. Danses apprises
-
- https://www.youtube.com/watch?v=bltFq_yEr6s
+C
