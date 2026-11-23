@@ -40,24 +40,32 @@ choregraphies:
         video: https://youtube.com/watch?v=gYb5PX1rZn0&is=FJr_YcxIW5OO3i5K
       - titre: MAMBO UP
         video: https://www.youtube.com/watch?v=sr3sOtZZoxg
-  - cours: JEUDI 19 novembre  14 h - 16 h
+  - cours: JEUDI 26 novembre  14 h - 16 h
     danses:
       - titre: R & R
         video: https://youtu.be/GVkBGi-2Ads?si=J6fkKkr2jogfMhfn
-      - titre: BEAUTIFUL DAY
-        video: https://youtu.be/Yvg2d3FKMwU?si=yMMqUZzXAAr2AU_5
-      - titre: DADY COOL
-        video: https://youtu.be/jLX386c5a0w?si=5zlEnRUwp_2doz0u
+      - titre: WHO NEEDS TO KNOW
+        video: https://youtu.be/nm5Y_jAxpIM?si=s2cGO6cFhykN4dbI
+      - titre: COMMENT CA VA ?
+        video: https://youtu.be/ReifZIzvp1s?si=pKzbl3G7XhzuktUl
       - video: https://youtu.be/KX_0ug6h7Tg?si=weNxSXXg8QkTwFI1
         titre: HILLBILLY GIRL
       - titre: NATALIA'S COUNTRY
         video: https://www.youtube.com/watch?v=MJnhHJXS1Co
+      - video: https://youtu.be/ReifZIzvp1s?si=pKzbl3G7XhzuktUl
+        titre: LUCKY LIPS
   - cours: "RECAPITULATIF DANSES DU MARDI "
     danses:
       - titre: JIVE ALL NIGHT (Danse de présentation du club pour la JDD du 6 avril)
         video: https://youtube.com/watch?v=gYb5PX1rZn0&is=FJr_YcxIW5OO3i5K
       - titre: LET'S DO DA DANCE (Danse proposée par notre club pour la JDD
         video: https://www.youtube.com/watch?v=pOQserOpohA
+  - cours: RECAPITULATIF DANSES DU JEUDI
+    danses:
+      - video: https://youtu.be/Yvg2d3FKMwU?si=yMMqUZzXAAr2AU_5
+        titre: BEAUTIFUL DAY
+      - video: https://youtu.be/jLX386c5a0w?si=5zlEnRUwp_2doz0u
+        titre: DADY COOL
 photos:
   - image: /images/groupe-bage.jpg
   - image: /images/igjp1929.jpg
