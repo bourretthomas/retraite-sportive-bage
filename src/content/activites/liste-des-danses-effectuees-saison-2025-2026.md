@@ -52,7 +52,7 @@ choregraphies:
         titre: HILLBILLY GIRL
       - titre: NATALIA'S COUNTRY
         video: https://www.youtube.com/watch?v=MJnhHJXS1Co
-      - video: https://youtu.be/ReifZIzvp1s?si=pKzbl3G7XhzuktUl
+      - video: https://www.youtube.com/watch?v=lQEP587zo2Y
         titre: LUCKY LIPS
   - cours: "RECAPITULATIF DANSES DU MARDI "
     danses:
