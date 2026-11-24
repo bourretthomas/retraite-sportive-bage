@@ -55,18 +55,21 @@ choregraphies:
       - video: https://www.youtube.com/watch?v=lQEP587zo2Y
         titre: LUCKY LIPS
   - cours: "RECAPITULATIF DANSES DU MARDI "
-    danses:
-      - titre: JIVE ALL NIGHT (Danse de présentation du club pour la JDD du 6 avril)
-        video: https://youtube.com/watch?v=gYb5PX1rZn0&is=FJr_YcxIW5OO3i5K
-      - titre: LET'S DO DA DANCE (Danse proposée par notre club pour la JDD
-        video: https://www.youtube.com/watch?v=pOQserOpohA
+    danses: []
   - cours: DANSES DE LA JOURNEE DE LA DANSE
     danses:
       - titre: I LOVE THAT DANCE (proposée par Attignat)
         video: https://www.youtube.com/watch?v=65a6rm09Cec
       - video: https://www.youtube.com/watch?v=xJJxvMk0-SE
         titre: THE POWER OF LOVE (proposée par Attignat)
-      - titre: LET'S DO DA DANCE (Bâgé)
+      - titre: LET'S DO DA DANCE (Danse proposée par notre club pour la JDD)
+        video: https://www.youtube.com/watch?v=pOQserOpohA
+      - titre: DIGIDI DIGIDI (danse proposée par notre club pour la JDD)
+        video: https://www.youtube.com/watch?v=B_j5yTJbGmo
+      - titre: HEY CABALLERO (proposée par Bourg)
+        video: https://www.youtube.com/watch?v=Rx_88OQX4Gc
+      - titre: COCO NANA (proposée par Bourg)
+        video: https://www.youtube.com/watch?v=hW1rWZTyl28
 photos:
   - image: /images/groupe-bage.jpg
   - image: /images/igjp1929.jpg
