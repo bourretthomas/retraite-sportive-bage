@@ -27,7 +27,8 @@ choregraphies:
       - titre: MY NEW LIFE
         video: https://www.youtube.com/watch?v=NjHP2zcT8ic
       - titre: RHUMBUMBUMBA (JDD)
-  - cours: MARDI 24 novembre - 10 h 20 - 11 h 50 - cours débutantes
+        video: https://www.youtube.com/watch?v=kjHhUuKSDRY
+  - cours: MARDI 1er décembre - 10 h 20 - 11 h 50 - cours débutantes
     danses:
       - titre: AZIZAM
         video: https://www.youtube.com/watch?v=8dlgWQrv1E4
@@ -36,6 +37,7 @@ choregraphies:
       - titre: JIVE ALL NIGHT
         video: https://youtube.com/watch?v=gYb5PX1rZn0&is=FJr_YcxIW5OO3i5K
       - titre: RHUMBUMBUMBA (JDD)
+        video: https://www.youtube.com/watch?v=kjHhUuKSDRY
   - cours: JEUDI 26 novembre  14 h - 16 h
     danses:
       - titre: R & R
