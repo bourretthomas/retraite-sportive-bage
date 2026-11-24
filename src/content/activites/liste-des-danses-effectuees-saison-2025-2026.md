@@ -16,20 +16,17 @@ animateurs:
   - nom: Brigitte FRONTIERE
     tel: 06.19.33.10.71
 choregraphies:
-  - cours: "MARDI  24 novembre - 8 h 45 - 10 h 15 : danseuses confirmées "
+  - cours: "MARDI  1er décembre - 8 h 45 - 10 h 15 : danseuses confirmées "
     danses:
       - titre: ZOO
         video: https://www.youtube.com/watch?v=50H0vyGoI6w
-      - titre: MISTER SHOWMAN
-        video: https://www.youtube.com/watch?v=4_eAjAWHgB0
       - titre: MOVIMIENTO
         video: https://www.youtube.com/watch?v=Q5n0ZcZ4YXA
       - titre: DIGIDI DIGIDI (danse proposée par notre club pour la JDD)
         video: https://www.youtube.com/watch?v=B_j5yTJbGmo
       - titre: MY NEW LIFE
         video: https://www.youtube.com/watch?v=NjHP2zcT8ic
-      - titre: DESPACITO
-        video: https://www.youtube.com/watch?v=GTrUUgTNjo8
+      - titre: RHUMBUMBUMBA (JDD)
   - cours: MARDI 24 novembre - 10 h 20 - 11 h 50 - cours débutantes
     danses:
       - titre: AZIZAM
@@ -38,8 +35,7 @@ choregraphies:
         video: https://www.youtube.com/watch?v=A4r4--btbxs
       - titre: JIVE ALL NIGHT
         video: https://youtube.com/watch?v=gYb5PX1rZn0&is=FJr_YcxIW5OO3i5K
-      - titre: MAMBO UP
-        video: https://www.youtube.com/watch?v=sr3sOtZZoxg
+      - titre: RHUMBUMBUMBA (JDD)
   - cours: JEUDI 26 novembre  14 h - 16 h
     danses:
       - titre: R & R
