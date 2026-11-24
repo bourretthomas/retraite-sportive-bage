@@ -70,6 +70,18 @@ choregraphies:
         video: https://www.youtube.com/watch?v=Rx_88OQX4Gc
       - titre: COCO NANA (proposée par Bourg)
         video: https://www.youtube.com/watch?v=hW1rWZTyl28
+      - titre: BACHATA (proposée par Dortan)
+        video: https://www.youtube.com/watch?v=galUf6irppo
+      - titre: Comment ça va ? (proposée par Dortan)
+        video: https://www.youtube.com/watch?v=FijicQbVAGk
+      - titre: RHUMBUMBUMBA (proposée par St Etienne)
+        video: https://www.youtube.com/watch?v=kjHhUuKSDRY
+      - titre: CLAYMORE (proposée par St Etienne)
+        video: https://www.youtube.com/watch?v=yKjYdNyzJ7E
+      - titre: WAY THINGS WORK (Viriat)
+        video: https://www.youtube.com/watch?v=xN88a05wsgA
+      - titre: LOVE ME TWO HAVEN (Viriat)
+        video: https://www.youtube.com/watch?v=armcIOqyypc
 photos:
   - image: /images/groupe-bage.jpg
   - image: /images/igjp1929.jpg
