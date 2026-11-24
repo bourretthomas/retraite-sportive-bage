@@ -60,12 +60,13 @@ choregraphies:
         video: https://youtube.com/watch?v=gYb5PX1rZn0&is=FJr_YcxIW5OO3i5K
       - titre: LET'S DO DA DANCE (Danse proposée par notre club pour la JDD
         video: https://www.youtube.com/watch?v=pOQserOpohA
-  - cours: RECAPITULATIF DANSES DU JEUDI
+  - cours: DANSES DE LA JOURNEE DE LA DANSE
     danses:
-      - video: https://youtu.be/Yvg2d3FKMwU?si=yMMqUZzXAAr2AU_5
-        titre: BEAUTIFUL DAY
-      - video: https://youtu.be/jLX386c5a0w?si=5zlEnRUwp_2doz0u
-        titre: DADY COOL
+      - titre: I LOVE THAT DANCE (proposée par Attignat)
+        video: https://www.youtube.com/watch?v=65a6rm09Cec
+      - video: https://www.youtube.com/watch?v=xJJxvMk0-SE
+        titre: THE POWER OF LOVE (proposée par Attignat)
+      - titre: LET'S DO DA DANCE (Bâgé)
 photos:
   - image: /images/groupe-bage.jpg
   - image: /images/igjp1929.jpg
