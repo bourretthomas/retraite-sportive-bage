@@ -86,4 +86,4 @@ photos:
   - image: /images/ensemble.jpg
     legende: ""
 ---
-JOURNEE DE LA DANSE LE MARDI 6 AVRIL 2027
+#### **JOURNEE DE LA DANSE LE MARDI 6 AVRIL 2027**
